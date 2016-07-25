@@ -47,12 +47,12 @@ describe Roaster do
     expect(test_roaster.farmers()).to eq([test_farmer, test_farmer2])
   end
 
-  # it 'should have many roasts' do
-  #   test_roaster = Roaster.create(name: "Barista", street: '123 Main Street', city: 'Portland', state: 'OR', zip: '98765', phone_number: '555-123-1234', email: 'barista@gmail.com', password: '123456789', user_type: 2)
-  #   test_roast = Roast.create(name: "Cat's Meow", price: 12.00, ounces: 16)
-  #   test_roast2 = Roast.create(name: "Fuzz Buzz", price: 13.55, ounces: 16)
-  #   test_roaster.roasts.push(test_roast)
-  #   test_roaster.roasts.push(test_roast2)
-  #   expect(test_roaster.roasts()).to eq([test_roast, test_roast2])
-  # end
+  it 'should have many roasts' do
+    test_roaster = Roaster.create(name: "Barista", street: '123 Main Street', city: 'Portland', state: 'OR', zip: '98765', phone_number: '555-123-1234', email: 'barista@gmail.com', password: '123456789', user_type: 2)
+    test_roast = Roast.create(name: "Cat's Meow", price: 12.00, ounces: 16)
+    test_roast2 = Roast.create(name: "Fuzz Buzz", price: 13.55, ounces: 16)
+    test_roaster.roasts.push(test_roast)
+    test_roaster.roasts.push(test_roast2)
+    expect(test_roaster.roasts()).to eq([test_roast, test_roast2])
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725202212) do
+ActiveRecord::Schema.define(version: 20160725230435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160725202212) do
     t.integer  "roaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "crop_id"
     t.index ["roaster_id"], name: "index_roasts_on_roaster_id", using: :btree
   end
 
