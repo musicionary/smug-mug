@@ -12,32 +12,26 @@ require './app'
 
 RSpec.configure do |config|
   config.before(:each) do
-    User.all.each do |user|
-      user.destroy
-    end
     Farmer.all.each do |farmer|
       farmer.destroy
     end
-    Roaster.all.each do |roaster|
-      roaster.destroy
-    end
-    Customer.all.each do |customer|
-      customer.destroy
-    end
+    # Roaster.all.each do |roaster|
+    #   roaster.destroy
+    # end
+    # Customer.all.each do |customer|
+    #   customer.destroy
+    # end
   end
 
   config.after(:each) do
-    User.all.each do |user|
-      user.destroy
-    end
     Farmer.all.each do |farmer|
       farmer.destroy
     end
-    Roaster.all.each do |roaster|
-      roaster.destroy
-    end
-    Customer.all.each do |customer|
-      customer.destroy
-    end
+    # Roaster.all.each do |roaster|
+    #   roaster.destroy
+    # end
+    # Customer.all.each do |customer|
+    #   customer.destroy
+    # end
   end
 end
