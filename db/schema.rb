@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725185013) do
+ActiveRecord::Schema.define(version: 20160725190057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crops", force: :cascade do |t|
+    t.integer  "farmer_id"
+    t.integer  "roaster_id"
+    t.string   "country_of_origin"
+    t.string   "elevation"
+    t.string   "varietal"
+    t.date     "harvest_date"
+    t.decimal  "price",             precision: 8, scale: 2
+    t.integer  "ounces"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["farmer_id"], name: "index_crops_on_farmer_id", using: :btree
+    t.index ["roaster_id"], name: "index_crops_on_roaster_id", using: :btree
+  end
 
   create_table "farmers", force: :cascade do |t|
     t.string   "name"
