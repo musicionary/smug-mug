@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: coffee_site_development
+
+test:
+  adapter: postgresql
+  database: coffee_site_test
