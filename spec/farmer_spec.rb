@@ -21,8 +21,8 @@ describe Farmer do
     test_farmer = Farmer.create(name: "John Tims", email: 'john@tims.com', password: '123456789', user_type: 1)
     test_roaster = Roaster.create(name: "Barista", street: '123 Main Street', city: 'Portland', state: 'OR', zip: '98765', phone_number: '555-123-1234', email: 'barista@gmail.com', password: '123456789', user_type: 2)
     test_roaster2 = Roaster.create(name: "Heart", street: '123 Main Street', city: 'Portland', state: 'OR', zip: '98765', phone_number: '555-123-1234', email: 'barista@gmail.com', password: '123456789', user_type: 2)
-    test_farmer.roasters.push(test_roaster)
-    test_farmer.roasters.push(test_roaster2)
+    test_crop = Crop.create(country_of_origin: "Uganda", elevation: "400 meters", varietal: "Harar", harvest_date: '2000-01-01', price: 400.00, ounces: 400, farmer_id: test_farmer.id(), roaster_id: test_roaster.id())
+    test_crop2 = Crop.create(country_of_origin: "Uganda", elevation: "400 meters", varietal: "Harar", harvest_date: '2000-01-01', price: 400.00, ounces: 400, farmer_id: test_farmer.id(), roaster_id: test_roaster2.id())
     expect(test_farmer.roasters()).to eq([test_roaster, test_roaster2])
   end
 end

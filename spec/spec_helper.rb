@@ -15,9 +15,15 @@ RSpec.configure do |config|
     Farmer.all.each do |farmer|
       farmer.destroy
     end
-    # Roaster.all.each do |roaster|
-    #   roaster.destroy
-    # end
+    Roaster.all.each do |roaster|
+      roaster.destroy
+    end
+    Roast.all.each do |roast|
+      roast.destroy
+    end
+    Crop.all.each do |crop|
+      crop.destroy
+    end
     # Customer.all.each do |customer|
     #   customer.destroy
     # end
@@ -27,9 +33,15 @@ RSpec.configure do |config|
     Farmer.all.each do |farmer|
       farmer.destroy
     end
-    # Roaster.all.each do |roaster|
-    #   roaster.destroy
-    # end
+    Roaster.all.each do |roaster|
+      roaster.destroy
+    end
+    Roast.all.each do |roast|
+      roast.destroy
+    end
+    Crop.all.each do |crop|
+      crop.destroy
+    end
     # Customer.all.each do |customer|
     #   customer.destroy
     # end
