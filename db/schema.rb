@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726223155) do
+ActiveRecord::Schema.define(version: 20160726232527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,22 +21,20 @@ ActiveRecord::Schema.define(version: 20160726223155) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone_number"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "farmers", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "country"
-    t.integer  "user_id"
-    t.string   "phone_number"
-    t.string   "elevation"
-    t.string   "city"
-    t.string   "varietal"
-    t.decimal  "crop_cost",     precision: 8, scale: 2
-    t.decimal  "shipping_cost", precision: 8, scale: 2
+    t.string  "country"
+    t.string  "phone_number"
+    t.string  "elevation"
+    t.string  "city"
+    t.string  "varietal"
+    t.decimal "crop_cost",     precision: 8, scale: 2
+    t.decimal "shipping_cost", precision: 8, scale: 2
+    t.integer "user_id"
   end
 
   create_table "roasters", force: :cascade do |t|
@@ -45,20 +43,17 @@ ActiveRecord::Schema.define(version: 20160726223155) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone_number"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "roasts", force: :cascade do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 8, scale: 2
-    t.integer  "ounces"
-    t.integer  "roaster_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "crop_id"
-    t.index ["roaster_id"], name: "index_roasts_on_roaster_id", using: :btree
+    t.string  "name"
+    t.decimal "price",      precision: 8, scale: 2
+    t.decimal "weight",     precision: 8, scale: 2
+    t.integer "roaster_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
