@@ -10,16 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726204007) do
+ActiveRecord::Schema.define(version: 20160726223155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "customers", force: :cascade do |t|
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "farmers", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "country"
+    t.integer  "user_id"
+    t.string   "phone_number"
+    t.string   "elevation"
+    t.string   "city"
+    t.string   "varietal"
+    t.decimal  "crop_cost",     precision: 8, scale: 2
+    t.decimal  "shipping_cost", precision: 8, scale: 2
+  end
+
+  create_table "roasters", force: :cascade do |t|
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "roasts", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.integer  "ounces"
+    t.integer  "roaster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "crop_id"
+    t.index ["roaster_id"], name: "index_roasts_on_roaster_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.string "user_type"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "user_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
