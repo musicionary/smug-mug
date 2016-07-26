@@ -28,6 +28,6 @@ describe Roast do
 
     test_roast = Roast.create({name: "Cat's Meow", price: 12.00, ounces: 16, roaster_id: test_roaster.id(), crop_id: test_crop.id()})
 
-    expect(test_roast.roaster.crops).to eq([test_crop])
+    expect(Crop.find(test_roast.crop_id)).to eq(test_crop)
   end
 end
