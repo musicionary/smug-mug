@@ -2,51 +2,43 @@ require('bundler/setup')
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-get('/') do
-  erb(:index)
+enable :sessions
+
+get '/' do
+  erb :index
 end
 
-get('/customer/:id') do
-  @customer = Customer.find(params[:id])
-  erb(:customer)
+get '/signup' do
+  erb :signup
 end
 
-get('/roasters') do
-  @roasters = Roaster.all()
-  erb(:roasters)
+get '/users/home' do
+  @user = User.find(session[:id])
+  erb :user_index
 end
 
-get('/roaster/:id') do
-  @roaster = Roaster.find(params[:id])
-  erb(:roaster)
+post '/signup' do
+  name = params[:name]
+  email = params[:email]
+  password = params[:password]
+  @user = User.create(name: name, email: email, password: password)
+  session[:id] = @user.id
+  redirect '/users/home'
 end
 
-get('/farmers') do
-  @farmers = Farmer.all()
-  erb(:farmers)
+get '/login' do
+  erb :login
 end
 
-get('/farmer/:id') do
-  @farmer = Farmer.find(params[:id])
-  erb(:farmer)
+post '/login' do
+  email = params[:email]
+  password = params[:password]
+  @user = User.find_by(email: email, password: password)
+  session[:id] = @user.id
+  redirect '/users/home'
 end
 
-get('/roasts') do
-  @roasts = Roast.all()
-  erb(:roasts)
-end
-
-get('/roasts/:id') do
-  @roast = Roast.find(params[:id])
-  erb(:roast)
-end
-
-get('/crops') do
-  @crops = Crop.all()
-  erb(:crops)
-end
-
-get('/crops/:id') do
-  @crop = Crop.find(params[:id])
-  erb(:crop)
+get('/logout') do
+  session.clear
+  redirect '/'
 end

@@ -24,8 +24,12 @@
             <li><a href="/farmers">Farmers</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon"></span> Login</a></li>
+            <% if session[:id] %>
+              <li><a href="/logout"><span class="glyphicon"></span> Logout</a></li>
+            <% else %>
+              <li><a href="/signup"><span class="glyphicon"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon"></span> Login</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
