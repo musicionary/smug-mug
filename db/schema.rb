@@ -10,68 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725231816) do
+ActiveRecord::Schema.define(version: 20160726223155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "crops", force: :cascade do |t|
-    t.integer  "farmer_id"
-    t.integer  "roaster_id"
-    t.string   "country_of_origin"
-    t.string   "elevation"
-    t.string   "varietal"
-    t.date     "harvest_date"
-    t.decimal  "price",             precision: 8, scale: 2
-    t.integer  "ounces"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["farmer_id"], name: "index_crops_on_farmer_id", using: :btree
-    t.index ["roaster_id"], name: "index_crops_on_roaster_id", using: :btree
-  end
-
   create_table "customers", force: :cascade do |t|
-    t.string   "name"
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "phone_number"
-    t.string   "email"
-    t.string   "password"
-    t.integer  "user_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "customers_roasts", id: false, force: :cascade do |t|
-    t.integer  "customer_id", null: false
-    t.integer  "roast_id",    null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   create_table "farmers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.integer  "user_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "country"
+    t.integer  "user_id"
+    t.string   "phone_number"
+    t.string   "elevation"
+    t.string   "city"
+    t.string   "varietal"
+    t.decimal  "crop_cost",     precision: 8, scale: 2
+    t.decimal  "shipping_cost", precision: 8, scale: 2
   end
 
   create_table "roasters", force: :cascade do |t|
-    t.string   "name"
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "phone_number"
-    t.string   "email"
-    t.string   "password"
-    t.integer  "user_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "roasts", force: :cascade do |t|
@@ -83,6 +59,15 @@ ActiveRecord::Schema.define(version: 20160725231816) do
     t.datetime "updated_at"
     t.integer  "crop_id"
     t.index ["roaster_id"], name: "index_roasts_on_roaster_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "user_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

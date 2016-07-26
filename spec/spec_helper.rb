@@ -21,12 +21,12 @@ RSpec.configure do |config|
     Roast.all.each do |roast|
       roast.destroy
     end
-    Crop.all.each do |crop|
-      crop.destroy
+    User.all.each do |user|
+      user.destroy
     end
-    # Customer.all.each do |customer|
-    #   customer.destroy
-    # end
+    Customer.all.each do |customer|
+      customer.destroy
+    end
   end
 
   config.after(:each) do
@@ -39,11 +39,11 @@ RSpec.configure do |config|
     Roast.all.each do |roast|
       roast.destroy
     end
-    Crop.all.each do |crop|
-      crop.destroy
+    User.all.each do |user|
+      user.destroy
     end
-    # Customer.all.each do |customer|
-    #   customer.destroy
-    # end
+    Customer.all.each do |customer|
+      customer.destroy
+    end
   end
 end
