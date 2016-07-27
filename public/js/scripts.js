@@ -17,4 +17,5 @@ $(function() {
     $('#roaster-button').hide();
     $('#customer-button').hide();
   });
+  
 });

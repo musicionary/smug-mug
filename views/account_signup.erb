@@ -4,24 +4,42 @@
 <button type="button" id="farmer-button">Farmer</button>
 <button type="button" id="roaster-button">Roaster</button>
 
-<form action="/user/customers" method="post" id="customer-account">
-  <label for="street">Street</label>
-  <input type="text" name="street" id="street">
+<div class="form" id="customer-account">
+  <div id="customer-form">
+    <h1>Sign Up for a Customer Account</h1>
+    <form action="/user/customers" method="post">
+    <div class="top-row">
+      <div class="field-wrap">
+        <label for="street">Street<span class="req">*</span></label>
+        <input type="text" required autocomplete="off" name="street" id="street"/>
+      </div>
+      <div class="field-wrap">
+        <label for="city">City<span class="req">*</span></label>
+        <input type="text"required autocomplete="off" name="city" id="city"/>
+      </div>
+    </div>
+    <div class="field-wrap">
+      <label for="state">State<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="state" id="state"/>
+    </div>
+    <div class="field-wrap">
+      <label for="zip">Zip Code<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="zip" id="zip"/>
+    </div>
+    <div class="field-wrap">
+      <label for="phone_number">Phone Number<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+    </div>
+    <button type="submit" class="button button-block"/>Get Started</button>
+    </form>
+  </div>
+</div>
 
-  <label for="city">City</label>
-  <input type="text" name="city" id="city">
 
-  <label for="state">State</label>
-  <input type="text" name="state" id="state">
 
-  <label for="zip">Zip</label>
-  <input type="text" name="zip" id="zip">
 
-  <label for="phone_number">Phone</label>
-  <input type="text" name="phone_number" id="phone_number">
 
-  <button type="submit">Create Account</button>
-</form>
+<!-- ==================================== -->
 
 <form action="/user/farmers" method="post" id="farmer-account">
   <label for="country">Country</label>
