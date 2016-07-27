@@ -1,8 +1,316 @@
+
+<!-- CUSTOMER -->
+
+<!-- <div class="wrap">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th scope="row">First Name</th>
+        <td>Mark</td>
+      </tr>
+      <tr>
+        <th scope="row">Last Name</th>
+        <td>Joe</td>
+      </tr>
+      <tr>
+        <th scope="row">Street</th>
+        <td>Carlaby way</td>
+      </tr>
+      <tr>
+        <th scope="row">City</th>
+        <td>Hillsboro</td>
+      </tr>
+      <tr>
+        <th scope="row">State</th>
+        <td>Oregon</td>
+      </tr>
+      <tr>
+        <th scope="row">Zip Code</th>
+        <td>97124</td>
+      </tr>
+      <tr>
+        <th scope="row">Phone Number</th>
+        <td>503-934-3294</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#">Orders</a></li>
+  <li role="presentation"><a href="#">Inventory</a></li>
+</ul>
+<div class="wrapper">
+  <h1>Manage Orders</h1>
+  <!--order-->
+  <div class="orders">
+    <!--categories-->
+    <ul class="categories">
+      <!--date-->
+      <li class="date">
+        <h2>Order Date</h2>
+      </li>
+      <!--details-->
+      <li class="details">
+        <h2>Order Details</h2>
+      </li>
+      <!--shipping-->
+      <li class="shipping">
+        <h2>Shipping</h2>
+      </li>
+      <!--Status-->
+      <li class="">
+        <h2>Status</h2>
+      </li>
+      <!--action-->
+      <li class="action">
+        <h2>Action</h2>
+      </li>
+    </ul>
+    <div class="orders-list">
+      <!--individual orders-->
+      <ul class="order one">
+        <!--order date-->
+        <li>
+          <p>July 12, 2016</p>
+          <p>1:30 pm PST</p>
+        </li>
+        <!--order details-->
+        <li>
+          <p>Kona Crop 3/12/2016</p>
+          <p>12 lb</p>
+          <p>Contact Buyer: Shelby Moracca</p>
+        </li>
+        <!--shipping-->
+        <li>
+          <p>Standard</p>
+          <p>Expected ship date</p>
+          <p>Aug 3, 2016</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Not shipped</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+          <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+          <button type="button" class='btn btn-default'><p>Refund order</p></button>
+        </li>
+      </ul>
+      <ul class="order two">
+        <!--order date-->
+        <li>
+          <p>July 1, 2016</p>
+          <p>4:45 am PST</p>
+        </li>
+        <!--order details-->
+        <li>
+          <p>Kona Crop 3/12/2016</p>
+          <p>12 lb</p>
+          <p>Contact Buyer: Shelby Moracca</p>
+        </li>
+        <!--shipping-->
+        <li>
+          <p>Standard</p>
+          <p>Expected ship date</p>
+          <p>Aug 3, 2016</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Shipped</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+          <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+          <button type="button" class='btn btn-default'><p>Refund order</p></button>
+        </li>
+      </ul>
+      <ul class="order three">
+        <!--order date-->
+        <li>
+          <p>June 28, 2016</p>
+          <p>12:01 pm PST</p>
+        </li>
+        <!--order details-->
+        <li>
+          <p>Kona Crop 3/12/2016</p>
+          <p>12 lb</p>
+          <p>Contact Buyer: Shelby Moracca</p>
+          <p>Billing Country: United Kingdom</p>
+        </li>
+        <!--shipping-->
+        <li>
+          <p>Standard</p>
+          <p>Expected ship date</p>
+          <p>Aug 3, 2016</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Shipped</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+          <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+          <button type="button" class='btn btn-default'><p>Refund order</p></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h1>Manage Inventory</h1>
+  <!--order-->
+  <div class="inventory">
+    <!--categories-->
+    <ul class="categories">
+      <!--product-name-->
+      <li class="product-name">
+        <h2>Product Name</h2>
+      </li>
+      <!--status-->
+      <li class="status">
+        <h2>Status</h2>
+      </li>
+      <!--sku-->
+      <li class="sku">
+        <h2>SKU</h2>
+      </li>
+      <!--date created-->
+      <li class="date-created">
+        <h2>Created</h2>
+      </li>
+      <!--available-->
+      <li class="available">
+        <h2>Qty</h2>
+      </li>
+      <li class="price">
+        <h2>Price/lb</h2>
+      </li>
+    </ul>
+    <div class="inventory-list">
+      <!--individual products-->
+      <ul class="product one">
+        <!--product name-->
+        <li>
+          <p>Batch</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Active</p>
+        </li>
+        <!--sku-->
+        <li>
+          <p>EU-19382</p>
+        </li>
+        <!--date created-->
+        <li>
+          <p>July 7, 2016</p>
+        </li>
+        <!--available-->
+        <li>
+          <p>77 lb</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Edit</p></button>
+          <button type="button" class='btn btn-default'><p>Delete</p></button>
+        </li>
+      </ul>
+      <ul class="product two">
+        <!--product name-->
+        <li>
+          <p>Batch</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Active</p>
+        </li>
+        <!--sku-->
+        <li>
+          <p>ND-37652</p>
+        </li>
+        <!--date created-->
+        <li>
+          <p>May 15, 2016</p>
+        </li>
+        <!--available-->
+        <li>
+          <p>13 lb</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Edit</p></button>
+          <button type="button" class='btn btn-default'><p>Delete</p></button>
+        </li>
+      </ul>
+      <ul class="product three">
+        <!--product name-->
+        <li>
+          <p>Batch</p>
+        </li>
+        <!--status-->
+        <li>
+          <p>Active</p>
+        </li>
+        <!--sku-->
+        <li>
+          <p>PG-87609</p>
+        </li>
+        <!--date created-->
+        <li>
+          <p>March 21, 2016</p>
+        </li>
+        <!--available-->
+        <li>
+          <p>2 lb</p>
+        </li>
+        <!--action-->
+        <li>
+          <button type="button" class='btn btn-default'><p>Edit</p></button>
+          <button type="button" class='btn btn-default'><p>Delete</p></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Hi <%= @user.name() %></h1>
-<p><%= @customer.street %></p>
-<p><%= @customer.city %></p>
-<p><%= @customer.state %></p>
-<p><%= @customer.zip %></p>
-<p>
-<%= @customer.phone_number %></p>
-<a href="/customer/edit">Edit</a>
+
+<a class="btn btn-default" role="button" href="/user_edit">Edit</a>
+
+<form action="/user/roasters" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="btn btn-default" type="submit" name="button">DELETE ACCOUNT</button>
+</form>

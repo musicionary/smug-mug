@@ -1,0 +1,876 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  padding: 1em; }
+
+.item {
+  flex: auto;
+  width: 400px;
+  margin: 2%; }
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; }
+
+.item:hover {
+  background-color: lightgray; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  background: black;
+  height: 200px;
+  width: 100%;
+  text-align: center; }
+  footer a {
+    align-items: center; }
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  margin-top: 2%; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  padding: 1em; }
+
+.item {
+  flex: auto;
+  width: 400px;
+  margin: 2%; }
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; }
+
+.item:hover {
+  background-color: lightgray; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  background: black;
+  height: 200px;
+  width: 100%;
+  text-align: center; }
+  footer a {
+    align-items: center; }
+
+.card-deck-wrapper {
+  margin: 5%; }
+
+.card {
+  text-align: center; }
+
+p {
+  font-weight: bold; }
+
+img {
+  border-radius: 10px;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 2%; }
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  margin-top: 2%; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  font-size: 12px; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.hero {
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-image: url("../img/main-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .hero h1 {
+    font-size: 92px;
+    text-align: center; }
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 3%;
+    text-align: center; }
+  .hero .signup-btn {
+    display: flex;
+    justify-content: center;
+    background: #e05a5a;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 150px;
+    height: 75px;
+    font-size: 20px; }
+
+.wrap {
+  width: 90%; }
+
+table {
+  border: 5px solid black; }
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .wrapper h1 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    margin: 5% auto; }
+  .wrapper .orders {
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .orders ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .orders ul li {
+        list-style: none;
+        width: 20%;
+        height: auto;
+        text-align: left; }
+        .wrapper .orders ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .orders .orders-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .orders .orders-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        .wrapper .orders .orders-list ul li {
+          width: 20%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .orders .orders-list ul li p {
+            font-size: 12px;
+            margin-bottom: 7px; }
+  .wrapper .inventory {
+    display: none;
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .inventory ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .inventory ul li {
+        list-style: none;
+        width: 16%;
+        height: auto;
+        text-align: left; }
+        .wrapper .inventory ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .inventory .inventory-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .inventory .inventory-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row; }
+        .wrapper .inventory .inventory-list ul li {
+          width: 16%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .inventory .inventory-list ul li p {
+            font-size: 14px;
+            margin-bottom: 7px; }
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  margin-top: 2%; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  font-size: 12px; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.hero {
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-image: url("../img/main-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .hero h1 {
+    font-size: 92px;
+    text-align: center; }
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 3%;
+    text-align: center; }
+  .hero .signup-btn {
+    display: flex;
+    justify-content: center;
+    background: #e05a5a;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 150px;
+    height: 75px;
+    font-size: 20px; }
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .wrapper h1 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    margin: 5% auto; }
+  .wrapper .orders {
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .orders ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .orders ul li {
+        list-style: none;
+        width: 20%;
+        height: auto;
+        text-align: left; }
+        .wrapper .orders ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .orders .orders-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .orders .orders-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        .wrapper .orders .orders-list ul li {
+          width: 20%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .orders .orders-list ul li p {
+            font-size: 12px;
+            margin-bottom: 7px; }
+  .wrapper .inventory {
+    display: none;
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .inventory ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .inventory ul li {
+        list-style: none;
+        width: 16%;
+        height: auto;
+        text-align: left; }
+        .wrapper .inventory ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .inventory .inventory-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .inventory .inventory-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row; }
+        .wrapper .inventory .inventory-list ul li {
+          width: 16%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .inventory .inventory-list ul li p {
+            font-size: 14px;
+            margin-bottom: 7px; }
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  margin-top: 2%; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  font-size: 12px; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.hero {
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-image: url("../img/main-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .hero h1 {
+    font-size: 92px;
+    text-align: center; }
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 3%;
+    text-align: center; }
+  .hero .signup-btn {
+    display: flex;
+    justify-content: center;
+    background: #e05a5a;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 150px;
+    height: 75px;
+    font-size: 20px; }
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .wrapper h1 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    margin: 5% auto; }
+  .wrapper .orders {
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .orders ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .orders ul li {
+        list-style: none;
+        width: 20%;
+        height: auto;
+        text-align: left; }
+        .wrapper .orders ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .orders .orders-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .orders .orders-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        .wrapper .orders .orders-list ul li {
+          width: 20%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .orders .orders-list ul li p {
+            font-size: 12px;
+            margin-bottom: 7px; }
+  .wrapper .inventory {
+    display: none;
+    width: 90%;
+    min-width: 600px;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; }
+    .wrapper .inventory ul {
+      width: 100%;
+      height: 5%;
+      display: flex;
+      flex-direction: row; }
+      .wrapper .inventory ul li {
+        list-style: none;
+        width: 16%;
+        height: auto;
+        text-align: left; }
+        .wrapper .inventory ul li h2 {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Verdana", "Geneva", sans-serif; }
+    .wrapper .inventory .inventory-list {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .wrapper .inventory .inventory-list ul {
+        width: 100%;
+        height: 30%;
+        margin: 0 0 5% 0;
+        border: 2px solid lightgrey;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: row; }
+        .wrapper .inventory .inventory-list ul li {
+          width: 16%;
+          height: auto;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column; }
+          .wrapper .inventory .inventory-list ul li p {
+            font-size: 14px;
+            margin-bottom: 7px; }
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  margin-top: 2%; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.hero {
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-image: url("../img/main-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .hero h1 {
+    font-size: 92px;
+    text-align: center; }
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 3%;
+    text-align: center; }
+  .hero .signup-btn {
+    display: flex;
+    justify-content: center;
+    background: #e05a5a;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 150px;
+    height: 75px;
+    font-size: 20px; }
+
+.boxes {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border: 2px dotted orange; }
+  .boxes .box {
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px dotted orange;
+    text-align: center; }
+    .boxes .box h3 {
+      align-self: center; }
+    .boxes .box img {
+      width: 50%;
+      height: auto;
+      margin-top: auto;
+      margin-bottom: auto; }
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  margin-top: 2%; }
+
+/*# sourceMappingURL=main.css.map */
