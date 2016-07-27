@@ -31,90 +31,15 @@
 </div><!-- end nav -->
 
 <div class="gallery">
-  <div class="item"><img src="<%= url('img/grower_image.jpg') %>" alt="" />
-    <p><a href="#">Burundi Kinyovu</a></p>
-    <p>Lemon-Lime, currant, banana</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (1).jpg') %>" alt="" />
-    <p><a href="#">Colombia Nilo Martinez</a></p>
-    <p>Raspberry, honey, pear.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (2).jpg') %>" alt="" />
-    <p><a href="#">Malawi Misuku</a></p>
-    <p>Orange blossom, cocoa & cranberry streusel.</p>
-    <p>$17 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (3).jpg') %>" alt="" />
-    <p><a href="#">Colombia La Plata</a></p>
-    <p>Bing cherry, blood orange, butterscotch.</p>
-    <p>$16.50 / 12oz</p>
-  </div>
-</div>
-<div class="gallery">
-  <div class="item"><img src="<%= url('img/grower_image (4).jpg') %>" alt="" />
-    <p><a href="#">Mexico Leyva Mancilla</a></p>
-    <p>Cashew, vanilla, baker's chocolate.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (5).jpg') %>" alt="" />
-    <p><a href="#">Cauca Colombia Medium Dark</a></p>
-    <p>Raspberry, honey, pear.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (6).jpg') %>" alt="" />
-    <p><a href="#">Brazil Fortaleza</a></p>
-    <p>Orange blossom, cocoa & cranberry streusel.</p>
-    <p>$17 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (7).jpg') %>" alt="" />
-    <p><a href="#">Ethiopia Yirgacheffe YirgZ</a></p>
-    <p>Bing cherry, blood orange, butterscotch.</p>
-    <p>$16.50 / 12oz</p>
-  </div>
-</div>
-<div class="gallery">
-  <div class="item"><img src="<%= url('img/grower_image (8).jpg') %>" alt="" />
-    <p><a href="#">Indonesia Java Jampit</a></p>
-    <p>Cashew, vanilla, baker's chocolate.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (9).jpg') %>" alt="" />
-    <p><a href="#">Ethiopia Celinga Village</a></p>
-    <p>Raspberry, honey, pear.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (10).jpg') %>" alt="" />
-    <p><a href="#">Kenya Ngunguru</a></p>
-    <p>Orange blossom, cocoa &amp; cranberry streusel.</p>
-    <p>$17 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (11).jpg') %>" alt="" />
-    <p><a href="#">Costa Rica Tarrazu</a></p>
-    <p>Bing cherry, blood orange, butterscotch.</p>
-    <p>$16.50 / 12oz</p>
-  </div>
-</div>
-<div class="gallery">
-  <div class="item"><img src="<%= url('img/grower_image (12).jpg') %>" alt="" />
-    <p><a href="#">Tanzania Tarime</a></p>
-    <p>Cashew, vanilla, baker's chocolate.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (13).jpg') %>" alt="" />
-    <p><a href="#">Sumatra</a></p>
-    <p>Raspberry, honey, pear.</p>
-    <p>$18 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image2.jpg') %>" alt="" />
-    <p><a href="#">Brazil Canaan Estate</a></p>
-    <p>Orange blossom, cocoa &amp; cranberry streusel.</p>
-    <p>$17 / 12oz</p>
-  </div>
-  <div class="item"><img src="<%= url('img/grower_image (14).jpg') %>" alt="" />
-    <p><a href="#">Colombia Los Vascos</a></p>
-    <p>Bing cherry, blood orange, butterscotch.</p>
-    <p>$16.50 / 12oz</p>
-  </div>
+  <% @farmers.each do |farmer| %>
+    <div class="item"><img src="<%= url('img/grower_image.jpg') %>" alt="" />
+      <p><a href="#">Farmer</a></p>
+      <p><%= farmer.country %></p>
+      <p><%= farmer.city %></p>
+      <p><%= farmer.elevation %></p>
+      <p><%= farmer.phone_number %></p>
+      <p><%= farmer.crop_cost %></p>
+      <p><%= farmer.shipping_cost %></p>
+    </div>
+  <% end %>
 </div>
