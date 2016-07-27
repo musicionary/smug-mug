@@ -13,10 +13,9 @@ get '/signup' do
   erb :signup
 end
 
-get '/users/home' do
-  @users = User.all
+get '/account_signup' do
   @user = User.find(session[:id])
-  erb :user_home
+  erb :account_signup
 end
 
 post '/signup' do
@@ -25,7 +24,7 @@ post '/signup' do
   password = params[:password]
   @user = User.create(name: name, email: email, password: password)
   session[:id] = @user.id
-  redirect '/users/home'
+  redirect '/account_signup'
 end
 
 get '/login' do
@@ -37,7 +36,7 @@ post '/login' do
   password = params[:password]
   @user = User.find_by(email: email, password: password)
   session[:id] = @user.id
-  redirect '/users/home'
+  redirect '/user_home'
 end
 
 get '/logout' do
@@ -45,26 +44,48 @@ get '/logout' do
   redirect '/'
 end
 
+get '/user_home' do
+  @user = User.find(session[:id])
+  erb :user_home
+end
+
+# Can we make this form have all fields?
 post '/user/customers' do
   @user = User.find(session[:id])
-  @customer = Customer.create(user_id: @user.id)
+  street = params[:street]
+  city = params[:city]
+  state = params[:state]
+  zip = params[:zip]
+  phone_number = params[:phone_number]
+  @customer = Customer.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
   @user.update(user_type: "customer")
-  binding.pry
-  redirect '/users/home'
+  redirect '/user_home'
 end
 
 post '/user/farmers' do
   @user = User.find(session[:id])
-  @farmer = Farmer.create(user_id: @user.id)
+  country = params[:country]
+  city = params[:city]
+  phone_number = params[:phone_number]
+  elevation = params[:elevation]
+  varietal = params[:varietal]
+  crop_cost = params[:crop_cost]
+  shipping_cost = params[:shipping_cost]
+  @farmer = Farmer.create(country: country, city: city, phone_number: phone_number, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost, user_id: @user.id)
   @user.update(user_type: "farmer")
-  redirect '/users/home'
+  redirect '/user_home'
 end
 
 post '/user/roasters' do
   @user = User.find(session[:id])
-  @roaster = Roaster.create(user_id: @user.id)
+  street = params[:street]
+  city = params[:city]
+  state = params[:state]
+  zip = params[:zip]
+  phone_number = params[:phone_number]
+  @roaster = Roaster.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
   @user.update(user_type: "roaster")
-  redirect '/users/home'
+  redirect '/user_home'
 end
 
 
