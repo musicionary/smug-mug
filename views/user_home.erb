@@ -1,8 +1,8 @@
 <h1>Hi <%= @user.name() %></h1>
 
-<a href="/customer/edit">Edit</a>
+<a class="btn btn-default" role="button" href="/user_edit">Edit</a>
 
 <form action="/user/roasters" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button type="submit" name="button">DELETE ACCOUNT</button>
+  <button class="btn btn-default" type="submit" name="button">DELETE ACCOUNT</button>
 </form>
