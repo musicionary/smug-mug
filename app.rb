@@ -14,6 +14,7 @@ get '/signup' do
 end
 
 get '/users/home' do
+  @users = User.all
   @user = User.find(session[:id])
   erb :user_index
 end
