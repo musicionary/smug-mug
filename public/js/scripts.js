@@ -11,8 +11,8 @@ $(function() {
     $('#roaster-button').hide();
     $('#customer-button').hide();
   });
-  $('#customer-button').click(function() {
-    $('#customer-account').show();
+  $('#roaster-button').click(function() {
+    $('#roaster-account').show();
     $('#farmer-button').hide();
     $('#roaster-button').hide();
     $('#customer-button').hide();
