@@ -13,6 +13,9 @@ get '/' do
   erb :index
 end
 
+################################
+#user sessions
+###############################
 get '/signup' do
   erb :signup
 end
@@ -44,6 +47,9 @@ get '/logout' do
   redirect '/'
 end
 
+################################
+#READ
+###############################
 get '/user_home' do
   @user = User.find(session[:id])
   @users = User.all
@@ -63,7 +69,9 @@ get '/user_home' do
   erb :user_home
 end
 
-# Can we make this form have all fields?
+################################
+#CREATE
+###############################
 post '/user/customers' do
   @user = User.find(session[:id])
   street = params[:street]
@@ -104,16 +112,22 @@ end
 
 
 ################################
-#customers
+#EDIT
 ###############################
 
-get('/customer/edit') do
+get('/user_edit') do
   @user = User.find(session[:id])
-  @customer = Customer.find_by(user_id: @user.id)
+  if @user.user_type == "customer"
+    @customer = Customer.find_by(user_id: @user.id)
+  elsif @user.user_type == "roaster"
+    @roaster = Roaster.find_by(user_id: @user.id)
+  else
+    @farmer = Farmer.find_by(user_id: @user.id)
+  end
   erb :user_edit
 end
 
-patch '/customer' do
+patch '/user/customers' do
   @user = User.find(session[:id])
   @customer = Customer.find_by(user_id: @user.id)
   street = params[:street]
@@ -121,96 +135,70 @@ patch '/customer' do
   state = params[:state]
   zip = params[:zip]
   phone_number = params[:phone_number]
-  @customer.update(street: street, city: city, state: state, zip: zip, phone_number: phone_number)
-  redirect "/user_home"
+  @customer.update(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
+  @user.update(user_type: "customer")
+  redirect '/user_home'
 end
 
-delete '/customers/:id' do
-  @customer = Customer.find(params[:id])
+patch '/user/farmers' do
+  @user = User.find(session[:id])
+  @farmer = Farmer.find_by(user_id: @user.id)
+  country = params[:country]
+  city = params[:city]
+  phone_number = params[:phone_number]
+  elevation = params[:elevation]
+  varietal = params[:varietal]
+  crop_cost = params[:crop_cost]
+  shipping_cost = params[:shipping_cost]
+  @farmer.update(country: country, city: city, phone_number: phone_number, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost, user_id: @user.id)
+  @user.update(user_type: "farmer")
+  redirect '/user_home'
+end
+
+patch '/user/roasters' do
+  @user = User.find(session[:id])
+  @roaster = Roaster.find_by(user_id: @user.id)
+  street = params[:street]
+  city = params[:city]
+  state = params[:state]
+  zip = params[:zip]
+  phone_number = params[:phone_number]
+  @roaster.update(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
+  @user.update(user_type: "roaster")
+  redirect '/user_home'
+end
+
+################################
+#DELETE
+###############################
+
+delete '/user/customers' do
+  @user = User.find(session[:id])
+  @customer = Customer.find_by(user_id: @user.id)
   @customer.destroy
-  redirect '/customers'
+  @user.destroy
+  session.clear
+  redirect '/'
 end
 
-################################
-#roasters
-###############################
-get '/roasters/new' do
-  erb :roaster_form
-end
 
-get '/roasters/:id' do
-  @roaster = Roaster.find(params[:id])
-  erb :roaster
-end
-
-post '/roasters' do
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
-  @roaster = Roaster.create(street: street, city: city, state: state, zip:zip, phone_number: phone_number)
-  redirect "/roasters"
-end
-
-patch '/roasters/:id' do
-  @roaster = Roaster.find(params[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
-  @roaster.update(street: street, city: city, state: state, zip:zip, phone_number: phone_number)
-  redirect "/roasters/#{@roaster.id}"
-end
-
-delete '/roasters/:id' do
-  @roaster = Roaster.find(params[:id])
+delete '/user/roasters' do
+  @user = User.find(session[:id])
+  @roaster = Roaster.find_by(user_id: @user.id)
   @roaster.destroy
-  redirect '/roasters'
+  @user.destroy
+  session.clear
+  redirect '/'
 end
 
-################################
-#farmers
-###############################
-get '/farmers/new' do
-  erb :farmer_form
-end
 
-get '/farmers/:id' do
-  @farmer = Farmer.find(params[:id])
-  erb :farmer
-end
-
-post '/farmers' do
-  phone_number = params[:phone_number]
-  country = params[:country]
-  city = params[:city]
-  elevation = params[:elevation]
-  varietal = params[:varietal]
-  crop_cost = params[:crop_cost]
-  shipping_cost = params[:shipping_cost]
-  @farmer = Farmer.create(phone_number: phone_number, country: country, city: city, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost)
-  redirect "/farmers"
-end
-
-patch '/farmers/:id' do
-  @farmer = Farmer.find(params[:id])
-  phone_number = params[:phone_number]
-  country = params[:country]
-  city = params[:city]
-  elevation = params[:elevation]
-  varietal = params[:varietal]
-  crop_cost = params[:crop_cost]
-  shipping_cost = params[:shipping_cost]
-  @farmer.update(phone_number: phone_number, country: country, city: city, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost)
-  redirect "/farmers/#{@farmer.id}"
-end
-
-delete '/farmers/:id' do
-  @farmer = Farmer.find(params[:id])
+delete '/user/farmers' do
+  @user = User.find(session[:id])
+  @farmer = Farmer.find_by(user_id: @user.id)
   @farmer.destroy
-  redirect('/farmers')
+  @user.destroy
+  session.clear
+  redirect '/'
 end
 
 ################################

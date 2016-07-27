@@ -1,8 +1,8 @@
 <h1>Hi <%= @user.name() %></h1>
-<p><%= @customer.street %></p>
-<p><%= @customer.city %></p>
-<p><%= @customer.state %></p>
-<p><%= @customer.zip %></p>
-<p>
-<%= @customer.phone_number %></p>
+
 <a href="/customer/edit">Edit</a>
+
+<form action="/user/roasters" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button">DELETE ACCOUNT</button>
+</form>

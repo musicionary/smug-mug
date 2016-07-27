@@ -1,20 +1,107 @@
-<form action="/customer" method="post">
-  <input type="hidden" name="_method" value="patch">
+<% if @user.user_type == 'customer' %>
+  <div class="form">
+    <div id="customer-form">
+      <h1>Edit Customer Account</h1>
+      <form action="/user/customers" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <div class="top-row">
+          <div class="field-wrap">
+            <label for="street">Street<span class="req">*</span></label>
+            <input type="text" required autocomplete="off" name="street" id="street"/>
+          </div>
+          <div class="field-wrap">
+            <label for="city">City<span class="req">*</span></label>
+            <input type="text"required autocomplete="off" name="city" id="city"/>
+          </div>
+        </div>
+        <div class="field-wrap">
+          <label for="state">State<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="state" id="state"/>
+        </div>
+        <div class="field-wrap">
+          <label for="zip">Zip Code<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="zip" id="zip"/>
+        </div>
+        <div class="field-wrap">
+          <label for="phone_number">Phone Number<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+        </div>
+        <button type="submit" class="button button-block"/>Edit</button>
+      </form>
+    </div>
+  </div>
 
-  <label for="street">Street</label>
-  <input type="text" name="street" id="street" value="<%= @customer.street %>">
+<% elsif @user.user_type == 'farmer' %>
+  <div class="form">
+    <div id="farmer-form">
+      <h1>Sign Up for a Farmer Account</h1>
+      <form action="/user/farmers" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <div class="top-row">
+          <div class="field-wrap">
+            <label for="city">City<span class="req">*</span></label>
+            <input type="text" required autocomplete="off" name="city" id="city"/>
+          </div>
+          <div class="field-wrap">
+            <label for="country">Country<span class="req">*</span></label>
+            <input type="text"required autocomplete="off" name="country" id="country"/>
+          </div>
+        </div>
+        <div class="field-wrap">
+          <label for="phone_number">Phone<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+        </div>
+        <div class="field-wrap">
+          <label for="elevation">Elevation<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="elevation" id="elevation"/>
+        </div>
+        <div class="field-wrap">
+          <label for="varietal">Varietal<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="varietal" id="varietal"/>
+        </div>
+        <div class="field-wrap">
+          <label for="crop_cost">Crop Cost<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="crop_cost" id="crop_cost"/>
+        </div>
+        <div class="field-wrap">
+          <label for="shipping_cost">Shipping Cost<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="shipping_cost" id="shipping_cost"/>
+        </div>
+        <button type="submit" class="button button-block"/>Get Started</button>
+      </form>
+    </div>
+  </div>
 
-  <label for="city">City</label>
-  <input type="text" name="city" id="city" value="<%= @customer.city %>">
-
-  <label for="state">State</label>
-  <input type="text" name="state" id="state" value="<%= @customer.state %>">
-
-  <label for="zip">Zip</label>
-  <input type="text" name="zip" id="zip" value="<%= @customer.zip %>">
-
-  <label for="phone_number">Phone</label>
-  <input type="text" name="phone_number" id="phone_number" value="<%= @customer.phone_number %>">
-
-  <button type="submit">Edit</button>
-</form>
+<% elsif @user.user_type == 'roaster' %>
+  <div class="form">
+    <div id="roaster-form">
+      <h1>Sign Up for a Roaster Account</h1>
+      <form action="/user/roasters" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <div class="top-row">
+          <div class="field-wrap">
+            <label for="street">Street<span class="req">*</span></label>
+            <input type="text" required autocomplete="off" name="street" id="street"/>
+          </div>
+          <div class="field-wrap">
+            <label for="city">City<span class="req">*</span></label>
+            <input type="text"required autocomplete="off" name="city" id="city"/>
+          </div>
+        </div>
+        <div class="field-wrap">
+          <label for="state">State<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="state" id="state"/>
+        </div>
+        <div class="field-wrap">
+          <label for="zip">Zip Code<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="zip" id="zip"/>
+        </div>
+        <div class="field-wrap">
+          <label for="phone_number">Phone Number<span class="req">*</span></label>
+          <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+        </div>
+        <button type="submit" class="button button-block"/>Get Started</button>
+      </form>
+    </div>
+  </div>
+<% end %>
