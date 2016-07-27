@@ -49,6 +49,7 @@ post '/user/customers' do
   @user = User.find(session[:id])
   @customer = Customer.create(user_id: @user.id)
   @user.update(user_type: "customer")
+  binding.pry
   redirect '/users/home'
 end
 
