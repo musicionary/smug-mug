@@ -31,10 +31,6 @@ post '/signup' do
   redirect '/account_signup'
 end
 
-get '/login' do
-  erb :login
-end
-
 post '/login' do
   email = params[:email]
   password = params[:password]
