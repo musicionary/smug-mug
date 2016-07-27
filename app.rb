@@ -5,6 +5,10 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 enable :sessions
 
+# before do
+#     @user = User.find(session[:id])
+#   end
+
 get '/' do
   erb :index
 end
@@ -46,6 +50,20 @@ end
 
 get '/user_home' do
   @user = User.find(session[:id])
+  @users = User.all
+  if @user.user_type == "customer"
+    @customer = Customer.find_by(user_id: @user.id)
+    @farmers = Farmer.all
+    @roasters = Roaster.all
+  elsif @user.user_type == "roaster"
+    @roaster = Roaster.find_by(user_id: @user.id)
+    @farmers = Farmer.all
+    @customers = Customer.all
+    @roasts = Roast.all
+  else
+    @farmer = Farmer.find_by(user_id: @user.id)
+    @roasters = Roaster.all
+  end
   erb :user_home
 end
 
@@ -93,34 +111,22 @@ end
 #customers
 ###############################
 
-get '/customers/new' do
-  erb :customer_form
+get('/customer/edit') do
+  @user = User.find(session[:id])
+  @customer = Customer.find_by(user_id: @user.id)
+  erb :user_edit
 end
 
-get '/customers/:id' do
-  @customer = Customer.find(params[:id])
-  erb :customer
-end
-
-post '/customers' do
+patch '/customer' do
+  @user = User.find(session[:id])
+  @customer = Customer.find_by(user_id: @user.id)
   street = params[:street]
   city = params[:city]
   state = params[:state]
   zip = params[:zip]
   phone_number = params[:phone_number]
-  @customer = Customer.create(street: street, city: city, state: state, zip:zip, phone_number: phone_number)
-  redirect "/customers"
-end
-
-patch '/customers/:id' do
-  @customer = Customer.find(params[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
-  @customer.update(street: street, city: city, state: state, zip:zip, phone_number: phone_number)
-  redirect "/customers/#{@customer.id}"
+  @customer.update(street: street, city: city, state: state, zip: zip, phone_number: phone_number)
+  redirect "/user_home"
 end
 
 delete '/customers/:id' do
