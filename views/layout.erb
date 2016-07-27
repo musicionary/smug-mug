@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <% if session[:id] %>
-              <li><a href="#"><span class="glyphicon"></span> Roasts</a></li>
+              <li><a href="/roasts"><span class="glyphicon"></span> Roasts</a></li>
             <% else %>
               <li><a href="/roasters">Roasters</a></li>
               <li><a href="/farmers">Farmers</a></li>
@@ -40,9 +40,24 @@
       </div>
     </nav>
     <%= yield %>
-    <div class="footer">
-
-    </div>
+    <footer>
+      <nav class="sitefooter-links">
+          <div class="sitefooter-links-group1">
+              <a class="sitefooter-link-inline" data-track-click="Click 'Home'" data-track-description="Site footer" href="/coffees">Home</a>
+              <a class="sitefooter-link-inline" data-track-click="Click 'Coffees'" data-track-description="Site footer" href="/coffees">Coffees</a>
+              <a class="sitefooter-link-inline" data-track-click="Click 'Roasters'" data-track-description="Site footer" href="/roasters">Roasters</a>
+              <a class="sitefooter-link-inline" data-track-click="Click 'Gift'" data-track-description="Site footer" href="/gifts">Farmers</a>
+          </div>
+          <div class="sitefooter-links-group2">
+              <a class="sitefooter-link-inline" data-track-click="Click 'Our Story'" data-track-description="Site footer" href="/our-story">Our Story</a>
+              <a href="https://blog.crema.co/" class="sitefooter-link-inline" data-track-click="Click 'Blog'" data-track-description="Site footer">Blog</a>
+              <a class="sitefooter-link-inline" data-track-click="Click 'FAQs'" data-track-description="Site footer" href="/faq">FAQs</a>
+              <a href="mailto:support@crema.co" class="sitefooter-link-inline" data-track-click="Click 'Support'" data-track-description="Site footer">Support</a>
+              <a class="sitefooter-link-inline" href="/terms">Terms</a>
+              <a class="sitefooter-link-inline" href="/privacy">Privacy</a>
+          </div>
+      </nav>
+    </footer>
     <script src="<%= url('https://code.jquery.com/jquery-2.2.4.min.js') %>"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="<%= url('js/scripts.js') %>"></script>
     <script type="text/javascript" src="<%= url('js/index.js') %>"></script>

@@ -69,6 +69,11 @@ get '/user_home' do
   erb :user_home
 end
 
+get '/farmers' do
+  @farmers = Farmer.all()
+  erb :farmers
+end
+
 ################################
 #CREATE
 ###############################
@@ -204,6 +209,10 @@ end
 ################################
 #roasts
 ###############################
+get '/roasts' do
+  erb :roasts
+end
+
 get '/roasts/new' do
   erb :roast_form
 end
