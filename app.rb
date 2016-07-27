@@ -16,7 +16,7 @@ end
 get '/users/home' do
   @users = User.all
   @user = User.find(session[:id])
-  erb :user_index
+  erb :user_home
 end
 
 post '/signup' do
