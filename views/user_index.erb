@@ -1,3 +1,23 @@
 <h2>Welcome, <%= @user.name %></h2>
 
-<a href="/logout">Logout</a>
+<% if @user.user_type == "farmer" %>
+  you are a farmer
+<% elsif @user.user_type == "customer" %>
+  you are a customer
+<% elsif @user.user_type == "roaster" %>
+  you are a roaster
+<% else %>
+  <h3>What type of user are you?</h3>
+
+  <form action="/user/customers" method="post">
+    <button type="submit">Customer</button>
+  </form>
+
+  <form action="/user/farmers" method="post">
+    <button type="submit">Farmer</button>
+  </form>
+
+  <form action="/user/roasters" method="post">
+    <button type="submit">Roaster</button>
+  </form>
+<% end %>

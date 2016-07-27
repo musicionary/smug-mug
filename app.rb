@@ -1,6 +1,6 @@
-require('bundler/setup')
+require 'bundler/setup'
 Bundler.require(:default)
-require('pry')
+require 'pry'
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 enable :sessions
@@ -39,25 +39,47 @@ post '/login' do
   redirect '/users/home'
 end
 
-get('/logout') do
+get '/logout' do
   session.clear
   redirect '/'
 end
+
+post '/user/customers' do
+  @user = User.find(session[:id])
+  @customer = Customer.create(user_id: @user.id)
+  @user.update(user_type: "customer")
+  redirect '/users/home'
+end
+
+post '/user/farmers' do
+  @user = User.find(session[:id])
+  @farmer = Farmer.create(user_id: @user.id)
+  @user.update(user_type: "farmer")
+  redirect '/users/home'
+end
+
+post '/user/roasters' do
+  @user = User.find(session[:id])
+  @roaster = Roaster.create(user_id: @user.id)
+  @user.update(user_type: "roaster")
+  redirect '/users/home'
+end
+
 
 ################################
 #customers
 ###############################
 
-get('/customers/new') do
-  erb(:customer_form)
+get '/customers/new' do
+  erb :customer_form
 end
 
-get('/customers/:id') do
+get '/customers/:id' do
   @customer = Customer.find(params[:id])
-  erb(:customer)
+  erb :customer
 end
 
-post('/customers') do
+post '/customers' do
   street = params[:street]
   city = params[:city]
   state = params[:state]
@@ -67,7 +89,7 @@ post('/customers') do
   redirect "/customers"
 end
 
-patch('/customers/:id') do
+patch '/customers/:id' do
   @customer = Customer.find(params[:id])
   street = params[:street]
   city = params[:city]
@@ -78,25 +100,25 @@ patch('/customers/:id') do
   redirect "/customers/#{@customer.id}"
 end
 
-delete('/customers/:id') do
+delete '/customers/:id' do
   @customer = Customer.find(params[:id])
   @customer.destroy
-  redirect('/customers')
+  redirect '/customers'
 end
 
 ################################
 #roasters
 ###############################
-get('/roasters/new') do
-  erb(:roaster_form)
+get '/roasters/new' do
+  erb :roaster_form
 end
 
-get('/roasters/:id') do
+get '/roasters/:id' do
   @roaster = Roaster.find(params[:id])
-  erb(:roaster)
+  erb :roaster
 end
 
-post('/roasters') do
+post '/roasters' do
   street = params[:street]
   city = params[:city]
   state = params[:state]
@@ -106,7 +128,7 @@ post('/roasters') do
   redirect "/roasters"
 end
 
-patch('/roasters/:id') do
+patch '/roasters/:id' do
   @roaster = Roaster.find(params[:id])
   street = params[:street]
   city = params[:city]
@@ -117,25 +139,25 @@ patch('/roasters/:id') do
   redirect "/roasters/#{@roaster.id}"
 end
 
-delete('/roasters/:id') do
+delete '/roasters/:id' do
   @roaster = Roaster.find(params[:id])
   @roaster.destroy
-  redirect('/roasters')
+  redirect '/roasters'
 end
 
 ################################
 #farmers
 ###############################
-get('/farmers/new') do
-  erb(:farmer_form)
+get '/farmers/new' do
+  erb :farmer_form
 end
 
-get('/farmers/:id') do
+get '/farmers/:id' do
   @farmer = Farmer.find(params[:id])
-  erb(:farmer)
+  erb :farmer
 end
 
-post('/farmers') do
+post '/farmers' do
   phone_number = params[:phone_number]
   country = params[:country]
   city = params[:city]
@@ -147,7 +169,7 @@ post('/farmers') do
   redirect "/farmers"
 end
 
-patch('/farmers/:id') do
+patch '/farmers/:id' do
   @farmer = Farmer.find(params[:id])
   phone_number = params[:phone_number]
   country = params[:country]
@@ -160,7 +182,7 @@ patch('/farmers/:id') do
   redirect "/farmers/#{@farmer.id}"
 end
 
-delete('/farmers/:id') do
+delete '/farmers/:id' do
   @farmer = Farmer.find(params[:id])
   @farmer.destroy
   redirect('/farmers')
@@ -169,11 +191,11 @@ end
 ################################
 #roasts
 ###############################
-get('/roasts/new') do
-  erb(:roast_form)
+get '/roasts/new' do
+  erb :roast_form
 end
 
-post('/roasts') do
+post '/roasts' do
   name = params[:name]
   roast_date = params[:roast_date]
   roast_type = params[:roast_type]
@@ -184,7 +206,7 @@ post('/roasts') do
   redirect "/roasts"
 end
 
-patch('/roasts/:id') do
+patch '/roasts/:id' do
   @roast = Roast.find(params[:id])
   street = params[:street]
   city = params[:city]
@@ -195,8 +217,8 @@ patch('/roasts/:id') do
   redirect "/roasts/#{@roast.id}"
 end
 
-delete('/roasts/:id') do
+delete '/roasts/:id' do
   @roast = Roast.find(params[:id])
   @roast.destroy
-  redirect('/roasts')
+  redirect '/roasts'
 end
