@@ -59,7 +59,7 @@ img {
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  background-image: url("../img/main-img.jpg");
+  background-image: url("../../img/main-img.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }

@@ -1,0 +1,20 @@
+<form action="/customer" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="street">Street</label>
+  <input type="text" name="street" id="street" value="<%= @customer.street %>">
+
+  <label for="city">City</label>
+  <input type="text" name="city" id="city" value="<%= @customer.city %>">
+
+  <label for="state">State</label>
+  <input type="text" name="state" id="state" value="<%= @customer.state %>">
+
+  <label for="zip">Zip</label>
+  <input type="text" name="zip" id="zip" value="<%= @customer.zip %>">
+
+  <label for="phone_number">Phone</label>
+  <input type="text" name="phone_number" id="phone_number" value="<%= @customer.phone_number %>">
+
+  <button type="submit">Edit</button>
+</form>
