@@ -35,52 +35,72 @@
   </div>
 </div>
 
+<div class="form" id="farmer-account">
+  <div id="farmer-form">
+    <h1>Sign Up for a Farmer Account</h1>
+    <form action="/user/farmers" method="post">
+    <div class="top-row">
+      <div class="field-wrap">
+        <label for="city">City<span class="req">*</span></label>
+        <input type="text" required autocomplete="off" name="city" id="city"/>
+      </div>
+      <div class="field-wrap">
+        <label for="country">Country<span class="req">*</span></label>
+        <input type="text"required autocomplete="off" name="country" id="country"/>
+      </div>
+    </div>
+    <div class="field-wrap">
+      <label for="phone_number">Phone<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+    </div>
+    <div class="field-wrap">
+      <label for="elevation">Elevation<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="elevation" id="elevation"/>
+    </div>
+    <div class="field-wrap">
+      <label for="varietal">Varietal<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="varietal" id="varietal"/>
+    </div>
+    <div class="field-wrap">
+      <label for="crop_cost">Crop Cost<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="crop_cost" id="crop_cost"/>
+    </div>
+    <div class="field-wrap">
+      <label for="shipping_cost">Shipping Cost<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="shipping_cost" id="shipping_cost"/>
+    </div>
+    <button type="submit" class="button button-block"/>Get Started</button>
+    </form>
+  </div>
+</div>
 
-
-
-
-<!-- ==================================== -->
-
-<form action="/user/farmers" method="post" id="farmer-account">
-  <label for="country">Country</label>
-  <input type="text" name="country" id="country">
-
-  <label for="city">City</label>
-  <input type="text" name="city" id="city">
-
-  <label for="phone_number">Phone</label>
-  <input type="text" name="phone_number" id="phone_number">
-
-  <label for="elevation">Elevation</label>
-  <input type="text" name="elevation" id="elevation">
-
-  <label for="varietal">Varietal</label>
-  <input type="text" name="varietal" id="varietal">
-
-  <label for="crop_cost">Crop Cost</label>
-  <input type="text" name="crop_cost" id="crop_cost">
-
-  <label for="shipping_cost">Shipping Cost</label>
-  <input type="text" name="shipping_cost" id="shipping_cost">
-
-  <button type="submit">Create Account</button>
-</form>
-
-<form action="/user/roasters" method="post" id="roaster-account">
-  <label for="street">Street</label>
-  <input type="text" name="street" id="street">
-
-  <label for="city">City</label>
-  <input type="text" name="city" id="city">
-
-  <label for="state">State</label>
-  <input type="text" name="state" id="state">
-
-  <label for="zip">Zip</label>
-  <input type="text" name="zip" id="zip">
-
-  <label for="phone_number">Phone</label>
-  <input type="text" name="phone_number" id="phone_number">
-
-  <button type="submit">Create Account</button>
-</form>
+<div class="form" id="roaster-account">
+  <div id="roaster-form">
+    <h1>Sign Up for a Roaster Account</h1>
+    <form action="/user/roasters" method="post">
+    <div class="top-row">
+      <div class="field-wrap">
+        <label for="street">Street<span class="req">*</span></label>
+        <input type="text" required autocomplete="off" name="street" id="street"/>
+      </div>
+      <div class="field-wrap">
+        <label for="city">City<span class="req">*</span></label>
+        <input type="text"required autocomplete="off" name="city" id="city"/>
+      </div>
+    </div>
+    <div class="field-wrap">
+      <label for="state">State<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="state" id="state"/>
+    </div>
+    <div class="field-wrap">
+      <label for="zip">Zip Code<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="zip" id="zip"/>
+    </div>
+    <div class="field-wrap">
+      <label for="phone_number">Phone Number<span class="req">*</span></label>
+      <input type="text"required autocomplete="off" name="phone_number" id="phone_number"/>
+    </div>
+    <button type="submit" class="button button-block"/>Get Started</button>
+    </form>
+  </div>
+</div>
