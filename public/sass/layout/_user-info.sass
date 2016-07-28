@@ -1,9 +1,40 @@
+html
+  height: 100%
+
+.background
+  background-image: url("../../public/img/coffee-banner-background.jpg")
+  background-size: cover
+  background-repeat: no-repeat
+  background-attachment: fixed
+  position: relative
+  z-index: 1
+  height: 100%
+  &:before
+    content: ""
+    width: 100%
+    min-height: 100%
+    background: white
+    position: absolute
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    opacity: 0.4
+
 .wrap
+  position: relative
+  z-index: 2
   width: 100%
-  margin-top: 5%
   .table-bordered > tbody > tr, .table-bordered > tbody > th
     border: 3px solid black
   .table-bordered
-    width: 70%
+    width: 60%
     margin-left: auto
     margin-right: auto
+tr
+  font-size: 20px
+  font-family: 'Lato', sans-serif
+  th
+    font-weight: bold
+a
