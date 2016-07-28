@@ -17,7 +17,7 @@ end
 #user sessions
 ###############################
 get '/signup' do
-  erb :signup
+  erb :signup_login
 end
 
 get '/account_signup' do
@@ -74,6 +74,12 @@ get '/farmers' do
   erb :farmers
 end
 
+get '/roasters' do
+  @users = User.all
+  @roasters = Roaster.all()
+  erb :roasters
+end
+
 ################################
 #CREATE
 ###############################
@@ -98,7 +104,7 @@ post '/user/farmers' do
   varietal = params[:varietal]
   crop_cost = params[:crop_cost]
   shipping_cost = params[:shipping_cost]
-  @farmer = Farmer.create(country: country, city: city, phone_number: phone_number, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost, user_id: @user.id)
+  @farmer = Farmer.create(country: country, city: city, phone_number: phone_number, elevation: elevation, varietal: varietal, crop_cost: crop_cost, shipping_cost: shipping_cost, user_id: @user.id, image_url: 'grower-image_1.jpg')
   @user.update(user_type: "farmer")
   redirect '/user_home'
 end
@@ -110,7 +116,7 @@ post '/user/roasters' do
   state = params[:state]
   zip = params[:zip]
   phone_number = params[:phone_number]
-  @roaster = Roaster.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
+  @roaster = Roaster.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id, image_url: 'grower-image_1.jpg')
   @user.update(user_type: "roaster")
   redirect '/user_home'
 end
