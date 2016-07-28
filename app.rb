@@ -62,7 +62,6 @@ get '/user_home' do
     @farmers = Farmer.all
     @customers = Customer.all
     @roasts = Roast.all
-    binding.pry
   elsif @user.user_type == "farmer"
     @farmer = Farmer.find_by(user_id: @user.id)
     @roasters = Roaster.all
@@ -105,6 +104,13 @@ get '/roasters' do
   @users = User.all
   @roasters = Roaster.all()
   erb :roasters
+end
+
+get '/roaster/:roaster_id' do
+  @roasts = Roast.all()
+  @farmers = Farmer.all()
+  @roaster = Roaster.find(params[:roaster_id])
+  erb :roaster
 end
 
 ################################
@@ -252,32 +258,19 @@ get '/roasts/new' do
 end
 
 post '/roasts' do
+  @farmers = Farmer.all()
+  @user = User.find(session[:id])
+  @roaster = Roaster.find_by(user_id: @user.id)
   name = params[:name]
   roast_date = params[:roast_date]
   roast_type = params[:roast_type]
   notes = params[:notes]
   price = params[:price]
   ounces = params[:ounces]
-  roaster_id = params[:roaster_id]
   farmer_id = params[:farmer_id]
   description = params[:description]
-  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
+  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: @roaster.id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
   redirect "/roasts"
-end
-
-patch '/roasts/:id' do
-  @roast = Roast.find(params[:id])
-  name = params[:name]
-  roast_date = params[:roast_date]
-  roast_type = params[:roast_type]
-  notes = params[:notes]
-  price = params[:price]
-  ounces = params[:ounces]
-  roaster_id = params[:roaster_id]
-  farmer_id = params[:farmer_id]
-  description = params[:description]
-  @roast.update(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
-  redirect "/roasts/#{@roast.id}"
 end
 
 delete '/roasts/:id' do

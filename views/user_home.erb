@@ -342,9 +342,10 @@
     </div>
     <div class="card-deck-wrapper">
       <div class="card-deck">
+        <% @counter = 1 %>
         <% @roasts.each do |roast| %>
           <div class="card">
-              <img class="card-img-top" src='<%= url("img/#{roast.image_url}") %>'alt="Card image cap">
+            <img class="card-img-top" src='<%= url("img/#{roast.image_url}") %>'alt="Card image cap">
             <div class="card-block">
               <h4 class="card-title"><%= roast.name %></h4>
               <p class="card-text">Roast Date: <%= roast.roast_date %></p>
@@ -355,6 +356,11 @@
               <p class="card-text">Ounces: <%= roast.ounces %>oz.</p>
             </div>
           </div>
+          <% if @counter % 3 == 0 %>
+            </div>
+            <div class="card-deck">
+          <% end %>
+          <% @counter += 1 %>
         <% end %>
       </div>
     </div>
