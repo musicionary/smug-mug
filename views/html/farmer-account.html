@@ -2,37 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Smug Mug</title>
+    <title>farmer account</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Farm to Mug</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Roasters</a></li>
-            <li><a href="#">Farmers</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <ul class="nav nav-tabs">
-      <li role="presentation"><a href="#">Orders</a></li>
-      <li role="presentation"><a href="#">Inventory</a></li>
-    </ul>
+    <div class="wrap">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td>Joe</td>
+          </tr>
+          <tr>
+            <th scope="row">Country</th>
+            <td>Carlaby way</td>
+          </tr>
+          <tr>
+            <th scope="row">City</th>
+            <td>Hillsboro</td>
+          </tr>
+          <tr>
+            <th scope="row">Phone</th>
+            <td>503-934-3294</td>
+          </tr>
+          <tr>
+            <th scope="row">Elevation</th>
+            <td>97124</td>
+          </tr>
+          <tr>
+            <th scope="row">Varietal</th>
+            <td>Herror</td>
+          </tr>
+          <tr>
+            <th scope="row">Crop Cost</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Shipping Cost</th>
+            <td>Herror</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="wrapper">
       <h1>Manage Orders</h1>
       <!--order-->
@@ -148,121 +161,6 @@
               <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
               <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
               <button type="button" class='btn btn-default'><p>Refund order</p></button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <h1>Manage Inventory</h1>
-      <!--order-->
-      <div class="inventory">
-        <!--categories-->
-        <ul class="categories">
-          <!--product-name-->
-          <li class="product-name">
-            <h2>Product Name</h2>
-          </li>
-          <!--status-->
-          <li class="status">
-            <h2>Status</h2>
-          </li>
-          <!--sku-->
-          <li class="sku">
-            <h2>SKU</h2>
-          </li>
-          <!--date created-->
-          <li class="date-created">
-            <h2>Created</h2>
-          </li>
-          <!--available-->
-          <li class="available">
-            <h2>Qty</h2>
-          </li>
-          <li class="price">
-            <h2>Price/lb</h2>
-          </li>
-        </ul>
-        <div class="inventory-list">
-          <!--individual products-->
-          <ul class="product one">
-            <!--product name-->
-            <li>
-              <p>Batch</p>
-            </li>
-            <!--status-->
-            <li>
-              <p>Active</p>
-            </li>
-            <!--sku-->
-            <li>
-              <p>EU-19382</p>
-            </li>
-            <!--date created-->
-            <li>
-              <p>July 7, 2016</p>
-            </li>
-            <!--available-->
-            <li>
-              <p>77 lb</p>
-            </li>
-            <!--action-->
-            <li>
-              <button type="button" class='btn btn-default'><p>Edit</p></button>
-              <button type="button" class='btn btn-default'><p>Delete</p></button>
-            </li>
-          </ul>
-          <ul class="product two">
-            <!--product name-->
-            <li>
-              <p>Batch</p>
-            </li>
-            <!--status-->
-            <li>
-              <p>Active</p>
-            </li>
-            <!--sku-->
-            <li>
-              <p>ND-37652</p>
-            </li>
-            <!--date created-->
-            <li>
-              <p>May 15, 2016</p>
-            </li>
-            <!--available-->
-            <li>
-              <p>13 lb</p>
-            </li>
-            <!--action-->
-            <li>
-              <button type="button" class='btn btn-default'><p>Edit</p></button>
-              <button type="button" class='btn btn-default'><p>Delete</p></button>
-            </li>
-          </ul>
-          <ul class="product three">
-            <!--product name-->
-            <li>
-              <p>Batch</p>
-            </li>
-            <!--status-->
-            <li>
-              <p>Active</p>
-            </li>
-            <!--sku-->
-            <li>
-              <p>PG-87609</p>
-            </li>
-            <!--date created-->
-            <li>
-              <p>March 21, 2016</p>
-            </li>
-            <!--available-->
-            <li>
-              <p>2 lb</p>
-            </li>
-            <!--action-->
-            <li>
-              <button type="button" class='btn btn-default'><p>Edit</p></button>
-              <button type="button" class='btn btn-default'><p>Delete</p></button>
             </li>
           </ul>
         </div>
