@@ -1,31 +1,36 @@
 .hero
   width: 100%
-  height: auto
+  height: 45em
   display: flex
   flex-direction: column
   justify-content: flex-end
   align-items: center
   position: relative
-  background-image: url("../img/main-img.jpg")
+  background-image: url("/Users/Guest/desktop/smug-mug/public/img/cover-img-coffee.jpeg")
   background-repeat: no-repeat
   background-position: center
   background-size: cover
   .homepage-title
-    font-size: 92px
+    font-size: 120px
     text-align: center
+    font-family: 'Righteous', cursive
+    text-transform: uppercase
+    color: white
   .homepage-subtitle
-    font-size: 36px
-    margin-bottom: 3%
+    font-size: 30px
+    margin-bottom: 2%
     text-align: center
+    font-family: 'Oswald', sans-serif
+    color: white
   .signup-btn
     display: flex
     justify-content: center
-    background: lighten(firebrick, 20%)
+    background: #c4292a
     color: white
     margin-top: 5%
     margin-bottom: 5%
-    width: 150px
-    height: 75px
+    width: 180px
+    height: 50px
     font-size: 20px
 
 .boxes
@@ -35,24 +40,34 @@
   flex-direction: row
   flex-wrap: nowrap
   justify-content: space-around
+  align-items: center
   border: 2px dotted orange
 .box
   width: 400px
   height: 400px
   display: flex
   flex-direction: column
-  justify-content: space-between
-  align-items: center
+  justify-content: center
   border: 2px dotted orange
   text-align: center
+  box-shadow: 10px 5px 5px grey
+
   .user-card
-    align-self: center
+    width: 100%
+    height: 10%
+    color: white
+    font-size: 40px
+    font-family: 'Abril Fatface', cursive
+    letter-spacing: 2px
+
+
 .one
   background: url('../../public/img/grower_image_2.jpg')
   background-repeat: no-repeat
   background-size: cover
+
 .two
-  background: url('../../public/img/roaster_logo_1.png')
+  background: url('../../public/img/product_image2.jpg')
   background-repeat: no-repeat
   background-size: cover
 .three

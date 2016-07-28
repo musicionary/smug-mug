@@ -189,32 +189,37 @@ button {
 
 .hero {
   width: 100%;
-  height: auto;
+  height: 45em;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  background-image: url("../img/main-img.jpg");
+  background-image: url("/Users/Guest/desktop/smug-mug/public/img/cover-img-coffee.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
   .hero .homepage-title {
-    font-size: 92px;
-    text-align: center; }
+    font-size: 120px;
+    text-align: center;
+    font-family: "Righteous", cursive;
+    text-transform: uppercase;
+    color: white; }
   .hero .homepage-subtitle {
-    font-size: 36px;
-    margin-bottom: 3%;
-    text-align: center; }
+    font-size: 30px;
+    margin-bottom: 2%;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    color: white; }
   .hero .signup-btn {
     display: flex;
     justify-content: center;
-    background: #e05a5a;
+    background: #c4292a;
     color: white;
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 150px;
-    height: 75px;
+    width: 180px;
+    height: 50px;
     font-size: 20px; }
 
 .boxes {
@@ -224,6 +229,7 @@ button {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  align-items: center;
   border: 2px dotted orange; }
 
 .box {
@@ -231,12 +237,17 @@ button {
   height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   border: 2px dotted orange;
-  text-align: center; }
+  text-align: center;
+  box-shadow: 10px 5px 5px grey; }
   .box .user-card {
-    align-self: center; }
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 40px;
+    font-family: "Abril Fatface", cursive;
+    letter-spacing: 2px; }
 
 .one {
   background: url("../../public/img/grower_image_2.jpg");
@@ -244,7 +255,7 @@ button {
   background-size: cover; }
 
 .two {
-  background: url("../../public/img/roaster_logo_1.png");
+  background: url("../../public/img/product_image2.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -323,36 +334,6 @@ footer {
   text-align: center; }
   footer a {
     align-items: center; }
-
-.hero {
-  width: 100%;
-  height: 45em;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  background-image: url("../img/main-img.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
-  .hero h1 {
-    font-size: 92px;
-    text-align: center; }
-  .hero h2 {
-    font-size: 36px;
-    margin-bottom: 3%;
-    text-align: center; }
-  .hero .signup-btn {
-    display: flex;
-    justify-content: center;
-    background: #e05a5a;
-    color: white;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 150px;
-    height: 75px;
-    font-size: 20px; }
 
 /* http://meyerweb.com/eric/tools/css/reset/
  * v2.0 | 20110126
