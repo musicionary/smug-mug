@@ -180,3 +180,22 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+.roast-img {
+  max-width: 30%;
+}
+
+.roast-item p {
+  max-width: 30%;
+  line-height: 20px;
+  background: #e5e5e5;
+}
+
+.roast-name {
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+.farmer-name {
+  font-size: 24px;
+}

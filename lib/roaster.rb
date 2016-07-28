@@ -4,4 +4,5 @@ class Roaster < ActiveRecord::Base
   # validates :phone_number, length: { in: 10..12 }
   validates :user_id, presence: true
   belongs_to :user
+  has_many :roasts
 end

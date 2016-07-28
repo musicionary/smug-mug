@@ -3,7 +3,7 @@
     <div class="item"><img class="center-block" src='<%= url("img/#{roaster.image_url}") %>' alt="" />
       <br><br>
       <% @user = User.find(roaster.user_id) %>
-      <p class="text-center"><a href="#"><%= @user.name %></a></p>
+      <p class="text-center"><a href="/roaster/<%= roaster.id %>"><%= @user.name %></a></p>
       <br>
       <address class="text-center">
         <p><%= roaster.street %></p>
