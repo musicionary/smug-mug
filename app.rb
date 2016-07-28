@@ -216,6 +216,7 @@ end
 #roasts
 ###############################
 get '/roasts' do
+  @roasts = Roast.all()
   erb :roasts
 end
 
@@ -230,18 +231,25 @@ post '/roasts' do
   notes = params[:notes]
   price = params[:price]
   ounces = params[:ounces]
-  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces)
+  roaster_id = params[:roaster_id]
+  farmer_id = params[:farmer_id]
+  description = params[:description]
+  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
   redirect "/roasts"
 end
 
 patch '/roasts/:id' do
   @roast = Roast.find(params[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
-  @roast.update(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces)
+  name = params[:name]
+  roast_date = params[:roast_date]
+  roast_type = params[:roast_type]
+  notes = params[:notes]
+  price = params[:price]
+  ounces = params[:ounces]
+  roaster_id = params[:roaster_id]
+  farmer_id = params[:farmer_id]
+  description = params[:description]
+  @roast.update(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
   redirect "/roasts/#{@roast.id}"
 end
 
