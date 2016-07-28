@@ -6,16 +6,14 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/farmers">Farmers</a>
+    <a class="navbar-brand" href="#">Sort Farmers By</a>
   </div>
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li><a href="/topic/notes/">Home</a></li>
-      <li><a href="/topic/dev/">Country</a></li>
-      <li><a href="/topic/good-reads/">Harvest Date</a></li>
-      <li><a href="/topic/art/">Elevation of farm</a></li>
-      <li><a href="/topic/bookmarks/">Farm</a></li>
-      <li><a href="/all-topics/">Varietals</a></li>
+      <li><a href="/farmers/country">Country</a></li>
+      <li><a href="/farmers/elevation">Elevation</a></li>
+      <li><a href="/farmers/city">City</a></li>
+      <li><a href="/farmers/varietal">Varietal</a></li>
     </ul>
     <div class="col-sm-3 col-md-3 pull-right">
       <form class="navbar-form" role="search">
@@ -31,16 +29,24 @@
 </div><!-- end nav -->
 
 <div class="gallery">
+  <% @counter = 1 %>
   <% @farmers.each do |farmer| %>
-    <div class="item"><img src='<%= url("img/#{farmer.image_url}") %>' alt="" />
+    <div class="item">
+      <img class="center-block" src='<%= url("img/#{farmer.image_url}") %>' alt="" />
+      <br><br>
       <% @user = User.find(farmer.user_id) %>
-      <p><a href="#"><%= @user.name %></a></p>
-      <p><%= farmer.country %></p>
-      <p><%= farmer.city %></p>
-      <p><%= farmer.elevation %></p>
-      <p><%= farmer.phone_number %></p>
-      <p><%= farmer.crop_cost %></p>
-      <p><%= farmer.shipping_cost %></p>
+      <p class="text-center"><a href="#"><%= @user.name %></a></p>
+      <br>
+      <p class="text-center"><%= farmer.city %>, <%= farmer.country %></p>
+      <p class="text-center">Elevation: <%= farmer.elevation %></p>
+      <p class="text-center">Phone: <%= farmer.phone_number %></p>
+      <p class="text-center">Crop Cost: <%= farmer.crop_cost %></p>
+      <p class="text-center">Shipping: <%= farmer.shipping_cost %></p>
     </div>
+    <% if @counter % 3 == 0 %>
+      </div>
+      <div class="gallery">
+    <% end %>
+    <% @counter += 1 %>
   <% end %>
 </div>

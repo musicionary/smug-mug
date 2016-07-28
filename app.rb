@@ -69,10 +69,36 @@ get '/user_home' do
   erb :user_home
 end
 
+#############
+# farmer ordering #
+##############
+
 get '/farmers' do
   @farmers = Farmer.all()
   erb :farmers
 end
+
+get '/farmers/country' do
+  @farmers = Farmer.order(:country)
+  erb :farmers
+end
+
+get '/farmers/elevation' do
+  @farmers = Farmer.order(:elevation)
+  erb :farmers
+end
+
+get '/farmers/city' do
+  @farmers = Farmer.order(:city)
+  erb :farmers
+end
+
+get '/farmers/varietal' do
+  @farmers = Farmer.order(:varietal)
+  erb :farmers
+end
+
+####################
 
 get '/roasters' do
   @users = User.all
