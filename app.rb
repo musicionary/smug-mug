@@ -17,7 +17,7 @@ end
 #user sessions
 ###############################
 get '/signup' do
-  erb :signup
+  erb :signup_login
 end
 
 get '/account_signup' do
