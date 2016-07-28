@@ -62,7 +62,6 @@ get '/user_home' do
     @farmers = Farmer.all
     @customers = Customer.all
     @roasts = Roast.all
-    binding.pry
   elsif @user.user_type == "farmer"
     @farmer = Farmer.find_by(user_id: @user.id)
     @roasters = Roaster.all

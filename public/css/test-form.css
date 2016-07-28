@@ -199,3 +199,8 @@ textarea {
 .farmer-name {
   font-size: 24px;
 }
+
+.card {
+  margin: 0 auto;
+  max-width: 30%;
+}
