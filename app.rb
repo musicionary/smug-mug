@@ -77,7 +77,7 @@ end
 get '/roasters' do
   @users = User.all
   @roasters = Roaster.all()
-  erb :farmers
+  erb :roasters
 end
 
 ################################
