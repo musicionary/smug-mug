@@ -9,5 +9,9 @@
       <p><%= roaster.zip %></p>
       <p><%= roaster.phone_number %></p>
     </div>
+    <% if roaster.id % 3 == 0 %>
+      </div>
+      <div class="gallery">
+    <% end %>
   <% end %>
 </div>
