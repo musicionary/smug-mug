@@ -1,13 +1,19 @@
 <div class="gallery">
   <% @roasters.each do |roaster| %>
-    <div class="item"><img src='<%= url("img/#{roaster.image_url}") %>' alt="" />
+    <div class="item"><img class="center-block" src='<%= url("img/#{roaster.image_url}") %>' alt="" />
+      <br><br>
       <% @user = User.find(roaster.user_id) %>
-      <p><a href="#"><%= @user.name %></a></p>
-      <p><%= roaster.street %></p>
-      <p><%= roaster.city %></p>
-      <p><%= roaster.state %></p>
-      <p><%= roaster.zip %></p>
-      <p><%= roaster.phone_number %></p>
+      <p class="text-center"><a href="#"><%= @user.name %></a></p>
+      <br>
+      <address class="text-center">
+        <p><%= roaster.street %></p>
+        <p><%= roaster.city %>, <%= roaster.state %>, <%= roaster.zip %></p><br>
+        <p>P: <%= roaster.phone_number %></p>
+      </address>
     </div>
+    <% if roaster.id % 3 == 0 %>
+      </div>
+      <div class="gallery">
+    <% end %>
   <% end %>
 </div>

@@ -2,6 +2,8 @@ require_relative '../lib/user'
 require_relative '../lib/farmer'
 require_relative '../lib/roaster'
 require_relative '../lib/customer'
+require_relative '../lib/roast'
+
 
 # FARMERS #
 User.create(id: 1, name: "Addisu Kidane", email: "addisu@gmail.com", password: "12345789", user_type: "farmer")
@@ -51,3 +53,16 @@ Customer.create(street: '33 3rd Ave', city: 'Portland', state: 'OR', zip: '97213
 Customer.create(street: '44 4th Ave', city: 'Portland', state: 'OR', zip: '97213', phone_number: '333-333-4444', user_id: 16)
 Customer.create(street: '55 5th Ave', city: 'Portland', state: 'OR', zip: '97213', phone_number: '333-333-5555', user_id: 17)
 Customer.create(street: '66 6th Ave', city: 'Portland', state: 'OR', zip: '97213', phone_number: '333-333-6666', user_id: 18)
+
+Roast.create(name: 'Brazil Canaan Estate', roast_date: '01-05-2016', roast_type: "Medium", notes: "Dark chocolate, nougat, honey.", price: 15.50, ounces: 12, roaster_id: 1, user_id: 1, image_url: 'coffee_bag_1.jpg', description: "When dark chocolate and nougat mingle with berry and honey notes and carry a lingering almond finish, you know you’re sipping something special. This offering from Brazil is full-bodied, low in acidity, sweet, smooth, and rich: a very balanced cup.")
+
+Roast.create(name: 'Malawi Misuku', roast_date: '01-05-2016', roast_type: "Light", notes: "Orange blossom, cocoa & cranberry streusel.", price: 17.00, ounces: 12, roaster_id: 2, user_id: 2, image_url: 'coffee_bag_2.jpg', description: "A medium-full bodied coffee, this lot from the Misuku Cooperative in Malawi balances delicate floral aromatics with rich cocoa in the cup. We love the buttery mouthfeel that reminds us of a fine Peruvian coffee with a sweet cranberry acidity in the finish.")
+
+Roast.create(name: 'Kenya Ngunguru', roast_date: '01-05-2016', roast_type: "Medium", notes: "Lemonade, pink peppercorn, Oolong tea.", price: 18.00, ounces: 12, roaster_id: 3, user_id: 3, image_url: 'coffee_bag_3.jpg', description: "Fragrances of grapefruit bitters and pungent black currant join molasses, paprika, and smoked sea salt. Notes of pomegranate and pineapple pair with vanilla, cranberry juice, and Sweet Tarts. Sweet spice and black tea bring a rounded finish.")
+
+Roast.create(name: 'Ethiopia Reko', roast_date: '01-05-2016', roast_type: "Light/Medium", notes: "Key lime, clove, honey.", price: 18.25, ounces: 12, roaster_id: 4, user_id: 4, image_url: 'coffee_bag_4.jpg', description: "This coffee sparkles with a plush candied character reminiscent of Key lime pie. Fragrances of cardamom, clove and honey give way to flavors of Lemoncello, green apple, chamomile, and melon. Silky in body, the cup finishes with a sweet honey-nougat aftertaste.")
+
+Roast.create(name: 'Costa Rica Tarrazu', roast_date: '01-05-2016', roast_type: "Medium", notes: "Fuji apple, pecan pie, honey graham.", price: 18.00, ounces: 12, roaster_id: 5, user_id: 5, image_url: 'coffee_bag_5.jpg', description: "Chocolate malt and honey graham are layered with attributes of banana bread, fuji apple, and pecan pie. This Costa Rica has an articulate body and a sweet acidity.")
+
+Roast.create(name: 'Guatemala Luz de la Noche, Waykan', roast_date: '01-05-2016', roast_type: "Medium", notes: "Herbal, green grape, lemon.
+", price: 17.00, ounces: 12, roaster_id: 6, user_id: 6, image_url: 'coffee_bag_6.jpg', description: "This coffee offers an herbal cup with green grape, lemon and nut layering together with a citric and tartaric acidity. Huehuetenangos typically exhibit a fruitier profile than other regions in Guatemala. This may be due to the common practice of stacking coffee higher on the patios than normal. Even if this may not be the most ideal in terms of efficient drying, the resulting cup is distinctly Huehue.")

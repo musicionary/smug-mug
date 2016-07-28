@@ -62,17 +62,44 @@ get '/user_home' do
     @farmers = Farmer.all
     @customers = Customer.all
     @roasts = Roast.all
-  else
+    binding.pry
+  elsif @user.user_type == "farmer"
     @farmer = Farmer.find_by(user_id: @user.id)
     @roasters = Roaster.all
   end
   erb :user_home
 end
 
+#############
+# farmer ordering #
+##############
+
 get '/farmers' do
   @farmers = Farmer.all()
   erb :farmers
 end
+
+get '/farmers/country' do
+  @farmers = Farmer.order(:country)
+  erb :farmers
+end
+
+get '/farmers/elevation' do
+  @farmers = Farmer.order(:elevation)
+  erb :farmers
+end
+
+get '/farmers/city' do
+  @farmers = Farmer.order(:city)
+  erb :farmers
+end
+
+get '/farmers/varietal' do
+  @farmers = Farmer.order(:varietal)
+  erb :farmers
+end
+
+####################
 
 get '/roasters' do
   @users = User.all
@@ -216,6 +243,7 @@ end
 #roasts
 ###############################
 get '/roasts' do
+  @roasts = Roast.all()
   erb :roasts
 end
 
@@ -230,18 +258,25 @@ post '/roasts' do
   notes = params[:notes]
   price = params[:price]
   ounces = params[:ounces]
-  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces)
+  roaster_id = params[:roaster_id]
+  farmer_id = params[:farmer_id]
+  description = params[:description]
+  @roast = Roast.create(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
   redirect "/roasts"
 end
 
 patch '/roasts/:id' do
   @roast = Roast.find(params[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
-  @roast.update(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces)
+  name = params[:name]
+  roast_date = params[:roast_date]
+  roast_type = params[:roast_type]
+  notes = params[:notes]
+  price = params[:price]
+  ounces = params[:ounces]
+  roaster_id = params[:roaster_id]
+  farmer_id = params[:farmer_id]
+  description = params[:description]
+  @roast.update(name: name, roast_date: roast_date, roast_type: roast_type, notes: notes, price: price, ounces: ounces, roaster_id: roaster_id, farmer_id: farmer_id, description: description, image_url: "coffee_bag_6.jpg")
   redirect "/roasts/#{@roast.id}"
 end
 
