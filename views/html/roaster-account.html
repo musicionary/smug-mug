@@ -2,11 +2,160 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Roasters</title>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <title>roaster account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
+    <div class="wrap">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td>Mark</td>
+          </tr>
+          <tr>
+            <th scope="row">Street</th>
+            <td>Carlaby way</td>
+          </tr>
+          <tr>
+            <th scope="row">City</th>
+            <td>Hillsboro</td>
+          </tr>
+          <tr>
+            <th scope="row">State</th>
+            <td>Oregon</td>
+          </tr>
+          <tr>
+            <th scope="row">Zip Code</th>
+            <td>97124</td>
+          </tr>
+          <tr>
+            <th scope="row">Phone Number</th>
+            <td>503-934-3294</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wrapper">
+      <h1>Manage Orders</h1>
+      <!--order-->
+      <div class="orders">
+        <!--categories-->
+        <ul class="categories">
+          <!--date-->
+          <li class="date">
+            <h2>Order Date</h2>
+          </li>
+          <!--details-->
+          <li class="details">
+            <h2>Order Details</h2>
+          </li>
+          <!--shipping-->
+          <li class="shipping">
+            <h2>Shipping</h2>
+          </li>
+          <!--Status-->
+          <li class="">
+            <h2>Status</h2>
+          </li>
+          <!--action-->
+          <li class="action">
+            <h2>Action</h2>
+          </li>
+        </ul>
+        <div class="orders-list">
+          <!--individual orders-->
+          <ul class="order one">
+            <!--order date-->
+            <li>
+              <p>July 12, 2016</p>
+              <p>1:30 pm PST</p>
+            </li>
+            <!--order details-->
+            <li>
+              <p>Kona Crop 3/12/2016</p>
+              <p>12 lb</p>
+              <p>Contact Buyer: Shelby Moracca</p>
+            </li>
+            <!--shipping-->
+            <li>
+              <p>Standard</p>
+              <p>Expected ship date</p>
+              <p>Aug 3, 2016</p>
+            </li>
+            <!--status-->
+            <li>
+              <p>Not shipped</p>
+            </li>
+            <!--action-->
+            <li>
+              <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+              <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+              <button type="button" class='btn btn-default'><p>Refund order</p></button>
+            </li>
+          </ul>
+          <ul class="order two">
+            <!--order date-->
+            <li>
+              <p>July 1, 2016</p>
+              <p>4:45 am PST</p>
+            </li>
+            <!--order details-->
+            <li>
+              <p>Kona Crop 3/12/2016</p>
+              <p>12 lb</p>
+              <p>Contact Buyer: Shelby Moracca</p>
+            </li>
+            <!--shipping-->
+            <li>
+              <p>Standard</p>
+              <p>Expected ship date</p>
+              <p>Aug 3, 2016</p>
+            </li>
+            <!--status-->
+            <li>
+              <p>Shipped</p>
+            </li>
+            <!--action-->
+            <li>
+              <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+              <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+              <button type="button" class='btn btn-default'><p>Refund order</p></button>
+            </li>
+          </ul>
+          <ul class="order three">
+            <!--order date-->
+            <li>
+              <p>June 28, 2016</p>
+              <p>12:01 pm PST</p>
+            </li>
+            <!--order details-->
+            <li>
+              <p>Kona Crop 3/12/2016</p>
+              <p>12 lb</p>
+              <p>Contact Buyer: Shelby Moracca</p>
+              <p>Billing Country: United Kingdom</p>
+            </li>
+            <!--shipping-->
+            <li>
+              <p>Standard</p>
+              <p>Expected ship date</p>
+              <p>Aug 3, 2016</p>
+            </li>
+            <!--status-->
+            <li>
+              <p>Shipped</p>
+            </li>
+            <!--action-->
+            <li>
+              <button type="button" class='btn btn-default'><p>Print packing slip</p></button>
+              <button type="button" class='btn btn-default'><p>Edit Shipments</p></button>
+              <button type="button" class='btn btn-default'><p>Refund order</p></button>
+            </li>
+          </ul>
+        </div>
+      </div>
     <div class="card-deck-wrapper">
       <div class="card-deck">
         <div class="card">
@@ -33,10 +182,12 @@
             <h4 class="card-title">TINKER COFFEE CO.</h4>
             <p class="card-text">Roast Date: 1/12/2015</p>
             <p class="card-text">varital: Harar</p>
-            <p class="card-text">Notes: Orange blossom, cocoa & cranberry streusel.</p>
+            <p class="card-text">Notes: Orange blossom, cocoa &amp; cranberry streusel.</p>
           </div>
         </div>
       </div>
+    </div>
+
     </div>
   </body>
 </html>
