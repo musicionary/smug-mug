@@ -32,16 +32,20 @@
   <% @counter = 1 %>
   <% @farmers.each do |farmer| %>
     <div class="item">
-      <img class="center-block" src='<%= url("img/#{farmer.image_url}") %>' alt="" />
+      <div class="image">
+        <img class="center-block" src='<%= url("img/#{farmer.image_url}") %>' alt="" />
+      </div>
       <br><br>
       <% @user = User.find(farmer.user_id) %>
-      <p class="text-center"><a href="#"><%= @user.name %></a></p>
-      <br>
-      <p class="text-center"><%= farmer.city %>, <%= farmer.country %></p>
-      <p class="text-center">Elevation: <%= farmer.elevation %></p>
-      <p class="text-center">Phone: <%= farmer.phone_number %></p>
-      <p class="text-center">Crop Cost: <%= farmer.crop_cost %></p>
-      <p class="text-center">Shipping: <%= farmer.shipping_cost %></p>
+      <div class="text">
+        <p class="text-center"><a href="#"><%= @user.name %></a></p>
+        <br>
+        <p class="text-center"><%= farmer.city %>, <%= farmer.country %></p>
+        <p class="text-center">Elevation: <%= farmer.elevation %></p>
+        <p class="text-center">Phone: <%= farmer.phone_number %></p>
+        <p class="text-center">Crop Cost: <%= farmer.crop_cost %></p>
+        <p class="text-center">Shipping: <%= farmer.shipping_cost %></p>
+      </div>
     </div>
     <% if @counter % 3 == 0 %>
       </div>

@@ -1,22 +1,45 @@
+.customer-profile
+  font-family: 'Oswald', sans-serif
+  font-size: 30px
+  color: black
+  margin-top: 5%
+
 .gallery
   display: flex
   justify-content: space-between
   margin: 1em 0
   padding: 1em
+  .item
+    display: flex
+    flex-direction: column
+    width: 400px
+    height: 600px
+    margin: 2%
+    .image
+      width: 350px
+      height: 350px
+      margin-bottom: 2%
+      img
+        max-width: 100%
+        height: auto
+        border-radius: 10px
+    .text
+      width: 350px
+      height: 50px
+      text-align: center
+      .roast-name
+        margin-bottom: 1%
+      .roast-flavor
+        margin-bottom: 2%
+        font-size: 18px
+      .roast-price
+        font-size: 18px
 
-.item
-  flex: auto
-  width: 400px
-  height: 600px
-  margin: 2%
-  .image
-    width: 350px
-    height: 350px
-    img
-      max-width: 100%
-      height: auto
-      border-radius: 10px
-
+.card-title
+  color: orange
+  font-size: 17px
+  font-weight: bold
+  margin-top: 3%
 footer
   display: flex
   justify-content: center
@@ -38,3 +61,10 @@ img
   max-width: 70%
   margin: auto
   margin-top: 2%
+.roast-name
+  font-weight: bold
+  font-size: 11px
+.roast-flavor
+  font-weight: bold
+.roast-price
+  font-weight: bold

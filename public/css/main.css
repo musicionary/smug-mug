@@ -1,3 +1,6 @@
+body {
+  background: white; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
  * v2.0 | 20110126
  * License: none (public domain) */
@@ -49,9 +52,16 @@ button {
 
 .navbar {
   margin-bottom: 0; }
-
-a {
-  color: white; }
+  .navbar .navbar-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Righteous", cursive; }
+  .navbar .nav li a {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: bold; }
 
 html {
   height: 100%; }
@@ -80,7 +90,8 @@ html {
 .wrap {
   position: relative;
   z-index: 2;
-  width: 100%; }
+  width: 100%;
+  margin-top: 5%; }
   .wrap .table-bordered > tbody > tr, .wrap .table-bordered > tbody > th {
     border: 3px solid black; }
   .wrap .table-bordered {
@@ -103,31 +114,32 @@ tr {
   .wrapper h1 {
     font-size: 28px;
     font-weight: bold;
-    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
     margin: 5% auto; }
   .wrapper .orders {
     width: 90%;
     min-width: 600px;
-    height: 30em;
+    height: 25em;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto; }
-    .wrapper .orders ul {
+    .wrapper .orders .categories {
       width: 100%;
       height: 5%;
       display: flex;
-      flex-direction: row; }
-      .wrapper .orders ul li {
+      flex-direction: row;
+      align-items: center; }
+      .wrapper .orders .categories li {
         list-style: none;
         width: 20%;
         height: auto;
-        text-align: left; }
-        .wrapper .orders ul li h2 {
+        text-align: left;
+        font-weight: bold; }
+        .wrapper .orders .categories li .category {
           font-size: 14px;
-          font-weight: bold;
-          font-family: "Verdana", "Geneva", sans-serif; }
+          font-weight: bold; }
     .wrapper .orders .orders-list {
       width: 100%;
       height: 90%;
@@ -138,7 +150,8 @@ tr {
         width: 100%;
         height: 30%;
         margin: 0 0 5% 0;
-        border: 2px solid lightgrey;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
         border-radius: 2%;
         display: flex;
         flex-direction: row;
@@ -204,22 +217,40 @@ tr {
   margin: 5%; }
   .card-deck-wrapper .card-deck {
     width: 90%;
-    display: flex; }
-    .card-deck-wrapper .card-deck .card {
-      text-align: center; }
-    .card-deck-wrapper .card-deck p {
-      font-weight: bold; }
+    display: flex;
+    justify-content: flex-start; }
     .card-deck-wrapper .card-deck img {
       border-radius: 10px;
       max-width: 70%;
       margin: auto;
       margin-top: 2%; }
 
-.footer {
+.card-title {
+  font-size: 17px;
+  font-weight: bold; }
+
+.card-text {
+  margin-top: 3%;
+  font-size: 14;
+  font-weight: normal; }
+
+footer {
   width: 100%;
-  height: 50px;
+  height: 100px;
   background-color: black;
   margin-top: 2%; }
+  footer .footer {
+    width: 50%;
+    height: inherit;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; }
+    footer .footer li {
+      margin: 3%;
+      font-size: 18px; }
 
 .homepage-background .hero {
   width: 100%;
@@ -331,24 +362,40 @@ img {
   border-radius: 10px;
   max-width: 70%;
   margin: auto;
-  margin-top: 2%; }
+  margin-top: 2%;
+  margin-bottom: 1%; }
 
 .gallery {
   display: flex;
   justify-content: space-between;
-  flex-wrap: no-wrap;
   margin: 1em 0;
   padding: 1em; }
+  .gallery .item {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    margin: 2%; }
+    .gallery .item .center-block {
+      border: 3px solid black; }
+    .gallery .item .image {
+      width: 350px;
+      height: 350px;
+      margin-bottom: 2%; }
+      .gallery .item .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; }
 
-.item {
-  flex: auto;
-  width: 400px;
-  margin: 2%; }
-
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; }
+.text-center {
+  color: black;
+  text-align: center;
+  font-size: 18px; }
+  .text-center a {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-size: 24px; }
 
 footer {
   display: flex;
@@ -360,24 +407,48 @@ footer {
   footer a {
     align-items: center; }
 
+.customer-profile {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: black;
+  margin-top: 5%; }
+
 .gallery {
   display: flex;
   justify-content: space-between;
   margin: 1em 0;
   padding: 1em; }
+  .gallery .item {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    margin: 2%; }
+    .gallery .item .image {
+      width: 350px;
+      height: 350px;
+      margin-bottom: 2%; }
+      .gallery .item .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; }
+    .gallery .item .text {
+      width: 350px;
+      height: 50px;
+      text-align: center; }
+      .gallery .item .text .roast-name {
+        margin-bottom: 1%; }
+      .gallery .item .text .roast-flavor {
+        margin-bottom: 2%;
+        font-size: 18px; }
+      .gallery .item .text .roast-price {
+        font-size: 18px; }
 
-.item {
-  flex: auto;
-  width: 400px;
-  height: 600px;
-  margin: 2%; }
-  .item .image {
-    width: 350px;
-    height: 350px; }
-    .item .image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px; }
+.card-title {
+  color: orange;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 3%; }
 
 footer {
   display: flex;
@@ -403,6 +474,31 @@ img {
   max-width: 70%;
   margin: auto;
   margin-top: 2%; }
+
+.roast-name {
+  font-weight: bold;
+  font-size: 11px; }
+
+.roast-flavor {
+  font-weight: bold; }
+
+.roast-price {
+  font-weight: bold; }
+
+.roaster-profile {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: black;
+  margin-top: 5%; }
+
+.manage-orders {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: black;
+  margin-top: 5%; }
+
+body {
+  background: white; }
 
 /* http://meyerweb.com/eric/tools/css/reset/
  * v2.0 | 20110126
@@ -455,9 +551,16 @@ button {
 
 .navbar {
   margin-bottom: 0; }
-
-a {
-  color: white; }
+  .navbar .navbar-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Righteous", cursive; }
+  .navbar .nav li a {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: bold; }
 
 html {
   height: 100%; }
@@ -486,7 +589,8 @@ html {
 .wrap {
   position: relative;
   z-index: 2;
-  width: 100%; }
+  width: 100%;
+  margin-top: 5%; }
   .wrap .table-bordered > tbody > tr, .wrap .table-bordered > tbody > th {
     border: 3px solid black; }
   .wrap .table-bordered {
@@ -509,31 +613,32 @@ tr {
   .wrapper h1 {
     font-size: 28px;
     font-weight: bold;
-    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
     margin: 5% auto; }
   .wrapper .orders {
     width: 90%;
     min-width: 600px;
-    height: 30em;
+    height: 25em;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto; }
-    .wrapper .orders ul {
+    .wrapper .orders .categories {
       width: 100%;
       height: 5%;
       display: flex;
-      flex-direction: row; }
-      .wrapper .orders ul li {
+      flex-direction: row;
+      align-items: center; }
+      .wrapper .orders .categories li {
         list-style: none;
         width: 20%;
         height: auto;
-        text-align: left; }
-        .wrapper .orders ul li h2 {
+        text-align: left;
+        font-weight: bold; }
+        .wrapper .orders .categories li .category {
           font-size: 14px;
-          font-weight: bold;
-          font-family: "Verdana", "Geneva", sans-serif; }
+          font-weight: bold; }
     .wrapper .orders .orders-list {
       width: 100%;
       height: 90%;
@@ -544,7 +649,8 @@ tr {
         width: 100%;
         height: 30%;
         margin: 0 0 5% 0;
-        border: 2px solid lightgrey;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
         border-radius: 2%;
         display: flex;
         flex-direction: row;
@@ -610,21 +716,39 @@ tr {
   margin: 5%; }
   .card-deck-wrapper .card-deck {
     width: 90%;
-    display: flex; }
-    .card-deck-wrapper .card-deck .card {
-      text-align: center; }
-    .card-deck-wrapper .card-deck p {
-      font-weight: bold; }
+    display: flex;
+    justify-content: flex-start; }
     .card-deck-wrapper .card-deck img {
       border-radius: 10px;
       max-width: 70%;
       margin: auto;
       margin-top: 2%; }
 
-.footer {
+.card-title {
+  font-size: 17px;
+  font-weight: bold; }
+
+.card-text {
+  margin-top: 3%;
+  font-size: 14;
+  font-weight: normal; }
+
+footer {
   width: 100%;
-  height: 50px;
+  height: 100px;
   background-color: black;
   margin-top: 2%; }
+  footer .footer {
+    width: 50%;
+    height: inherit;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; }
+    footer .footer li {
+      margin: 3%;
+      font-size: 18px; }
 
 /*# sourceMappingURL=main.css.map */

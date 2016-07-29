@@ -1,5 +1,6 @@
 <% if @user.user_type == 'customer' %>
   <div class="wrap">
+    <h1 class="customer-profile">Customer Profile</h1>
     <table class="table table-bordered">
       <tbody>
         <tr>
@@ -28,6 +29,18 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="gallery">
+    <div class="item">
+      <div class="image">
+        <img src="img/grower_image_1.jpg" alt=""/>
+      </div>
+      <div class="text">
+        <p class="roast-name"><a href="#">Burundi Kinyovu</a></p>
+        <p class="roast-flavor">Lemon-Lime, currant, banana</p>
+        <p class="roast-price">$18 / 12oz</p>
+      </div>
+    </div>
   </div>
 <% elsif @user.user_type == 'farmer' %>
   <div class="wrap">
@@ -191,6 +204,7 @@
 
   </div>
 <% elsif @user.user_type == 'roaster' %>
+  <h1 class="roaster-profile">Roaster Profile</h1>
   <div class="wrap">
     <table class="table table-bordered">
       <tbody>
@@ -222,30 +236,30 @@
     </table>
   </div>
   <div class="wrapper">
-    <h1>Manage Orders</h1>
+    <h1 class="manage-orders">Manage Orders</h1>
     <!--order-->
     <div class="orders">
       <!--categories-->
       <ul class="categories">
         <!--date-->
         <li class="date">
-          <h2>Order Date</h2>
+          <h2 class="category">Order Date</h2>
         </li>
         <!--details-->
         <li class="details">
-          <h2>Order Details</h2>
+          <h2 class="category">Order Details</h2>
         </li>
         <!--shipping-->
         <li class="shipping">
-          <h2>Shipping</h2>
+          <h2 class="category">Shipping</h2>
         </li>
         <!--Status-->
         <li class="">
-          <h2>Status</h2>
+          <h2 class="category">Status</h2>
         </li>
         <!--action-->
         <li class="action">
-          <h2>Action</h2>
+          <h2 class="category">Action</h2>
         </li>
       </ul>
       <div class="orders-list">
@@ -319,7 +333,6 @@
             <p>Kona Crop 3/12/2016</p>
             <p>12 lb</p>
             <p>Contact Buyer: Shelby Moracca</p>
-            <p>Billing Country: United Kingdom</p>
           </li>
           <!--shipping-->
           <li>
