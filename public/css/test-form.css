@@ -195,6 +195,7 @@ textarea {
 #roast-name {
   font-size: 40px;
   padding-bottom: 5px;
+  padding-top: 20px;
 }
 
 #roast-header {
@@ -208,4 +209,8 @@ textarea {
 .card {
   margin: 0 auto;
   max-width: 30%;
+}
+
+#user-select {
+  font-size: 48px;
 }
