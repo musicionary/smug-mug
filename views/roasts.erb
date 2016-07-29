@@ -36,14 +36,19 @@
 <div class="gallery">
   <% @counter = 1 %>
   <% @roasts.each do |roast| %>
-    <div class="item"><img src='<%= url("img/#{roast.image_url}") %>' alt="" />
+    <div class="item">
+      <div class="image">
+        <img src='<%= url("img/#{roast.image_url}") %>' alt="" />
+      </div>
       <br><br>
-      <p><a href="#"><%= roast.name %></a></p>
-      <p><%= roast.roast_date %></p>
-      <p><%= roast.roast_type %></p>
-      <p><%= roast.notes %></p>
-      <p>$<%= roast.price %>/<%= roast.ounces %>oz.</p>
-      <p><%= roast.description %></p>
+      <div class="roasts-text">
+        <p class="text-center"><a href="#"><%= roast.name %></a></p>
+        <p class="text-center"><%= roast.roast_date %></p>
+        <p class="text-center"><%= roast.roast_type %></p>
+        <p class="text-center"><%= roast.notes %></p>
+        <p class="text-center">$<%= roast.price %>/<%= roast.ounces %>oz.</p>
+        <p class="text-center"><%= roast.description %></p>
+      </div>
     </div>
     <% if @counter % 3 == 0 %>
       </div>
