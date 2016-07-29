@@ -35,8 +35,8 @@ post '/signup' do
 end
 
 post '/login' do
-  email = params[:email]
-  password = params[:password]
+  email = params['login-email']
+  password = params['login-password']
   @user = User.find_by(email: email, password: password)
   session[:id] = @user.id
   redirect '/user_home'
@@ -65,6 +65,8 @@ get '/user_home' do
   elsif @user.user_type == "farmer"
     @farmer = Farmer.find_by(user_id: @user.id)
     @roasters = Roaster.all
+  else
+    redirect '/account_signup'
   end
   erb :user_home
 end
@@ -118,11 +120,11 @@ end
 ###############################
 post '/user/customers' do
   @user = User.find(session[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
+  street = params[:customer_street]
+  city = params[:customer_city]
+  state = params[:customer_state]
+  zip = params[:customer_zip]
+  phone_number = params[:customer_phone_number]
   @customer = Customer.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id)
   @user.update(user_type: "customer")
   redirect '/user_home'
@@ -131,8 +133,8 @@ end
 post '/user/farmers' do
   @user = User.find(session[:id])
   country = params[:country]
-  city = params[:city]
-  phone_number = params[:phone_number]
+  city = params[:farmer_city]
+  phone_number = params[:farmer_phone_number]
   elevation = params[:elevation]
   varietal = params[:varietal]
   crop_cost = params[:crop_cost]
@@ -144,11 +146,11 @@ end
 
 post '/user/roasters' do
   @user = User.find(session[:id])
-  street = params[:street]
-  city = params[:city]
-  state = params[:state]
-  zip = params[:zip]
-  phone_number = params[:phone_number]
+  street = params[:roaster_street]
+  city = params[:roaster_city]
+  state = params[:roaster_state]
+  zip = params[:roaster_zip]
+  phone_number = params[:roaster_phone_number]
   @roaster = Roaster.create(street: street, city: city, state: state, zip: zip, phone_number: phone_number, user_id: @user.id, image_url: 'grower-image_1.jpg')
   @user.update(user_type: "roaster")
   redirect '/user_home'
