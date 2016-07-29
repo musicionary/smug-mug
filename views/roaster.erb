@@ -14,19 +14,24 @@
 </div>
 
 <!-- roasts -->
-<div class="gallery">
+<div class="roaster-gallery">
   <% @counter = 1 %>
   <% @roaster.roasts.each do |roast| %>
-    <div class="item roast-item"><img class="roast-img" src='<%= url("img/#{roast.image_url}") %>' alt="" />
+    <div class="item roast-item">
+      <div class="roaster-image">
+        <img class="roast-img" src='<%= url("img/#{roast.image_url}") %>' alt="" />
+      </div>
       <% @farmer = Farmer.find(roast.user_id) %>
       <% @farmer_user = User.find(@farmer.user_id) %>
-      <p class="farmer-name">Farmer: <%= @farmer_user.name %></p>
-      <p class="roast-name"><%= roast.name %></p>
-      <p>Roast Date: <%= roast.roast_date %></p>
-      <p>Roast Type: <%= roast.roast_type %></p>
-      <p><%= roast.notes %></p>
-      <p>$<%= roast.price %>/<%= roast.ounces %>oz.</p>
-      <p class="description"><%= roast.description %></p>
+      <div class="roaster-description">
+        <p class="farmer-name">Farmer: <%= @farmer_user.name %></p>
+        <p class="roast-name"><%= roast.name %></p>
+        <p>Roast Date: <%= roast.roast_date %></p>
+        <p>Roast Type: <%= roast.roast_type %></p>
+        <p><%= roast.notes %></p>
+        <p>$<%= roast.price %>/<%= roast.ounces %>oz.</p>
+        <p class="description"><%= roast.description %></p>
+      </div>
 
     </div>
     <% if @counter % 3 == 0 %>
