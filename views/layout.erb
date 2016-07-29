@@ -26,6 +26,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <% if session[:id] %>
+              <li><a href="/farmers"><span class="glyphicon"></span> Farmers</a></li>
+              <li><a href="/roasters"><span class="glyphicon"></span> Roasters</a></li>
               <li><a href="/roasts"><span class="glyphicon"></span> Roasts</a></li>
             <% else %>
               <li><a href="/farmers">Farmers</a></li>
@@ -47,9 +49,10 @@
     <%= yield %>
     <footer>
       <ul class="footer">
-        <li>Home</li>
-        <li>Coffees</li>
-        <li>Roasters</li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/roasts">Roasts</a></li>
+        <li><a href="/roasters">Roasters</a></li>
+        <li><a href="/farmers">Farmers</a></li>
       </ul>
     </footer>
     <script src="<%= url('https://code.jquery.com/jquery-2.2.4.min.js') %>"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
