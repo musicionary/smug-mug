@@ -192,9 +192,13 @@ textarea {
   background: #e5e5e5;
 }
 
-.roast-name {
-  font-size: 24px;
+#roast-name {
+  font-size: 40px;
   padding-bottom: 5px;
+}
+
+#roast-header {
+  font-size: 45px;
 }
 
 .farmer-name {
